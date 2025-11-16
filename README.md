@@ -43,7 +43,6 @@ npm install
 yarn install
 3. Jalankan development server:
 npm run dev
-# atau
 yarn dev
 Buka http://localhost:3000 di browser.
 
