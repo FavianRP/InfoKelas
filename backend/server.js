@@ -42,6 +42,20 @@ app.delete("/tugas/:id", (req, res) => {
   });
 });
 
+app.put("/tugas/:id", (req, res) => {
+  const { id } = req.params;
+  const { judul, deskripsi, deadline } = req.body;
+
+  db.run(
+    `UPDATE tugas SET judul = ?, deskripsi = ?, deadline = ? WHERE id = ?`,
+    [judul, deskripsi, deadline, id],
+    function (err) {
+      if (err) return res.status(500).json({ error: err.message });
+      res.json({ updated: this.changes });
+    }
+  );
+});
+
 // ------------------- JADWAL ------------------- //
 app.get("/jadwal", (req, res) => {
   db.all("SELECT * FROM jadwal", [], (err, rows) => {
@@ -52,7 +66,8 @@ app.get("/jadwal", (req, res) => {
 
 app.post("/jadwal", (req, res) => {
   console.log("Request body:", req.body);
-  const { mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen } = req.body;
+  const { mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen } =
+    req.body;
 
   db.run(
     `INSERT INTO jadwal (mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen)
@@ -68,10 +83,10 @@ app.post("/jadwal", (req, res) => {
   );
 });
 
-
 app.put("/jadwal/:id", (req, res) => {
   const { id } = req.params;
-  const { mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen } = req.body;
+  const { mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen } =
+    req.body;
 
   db.run(
     `UPDATE jadwal 
@@ -90,7 +105,8 @@ app.delete("/jadwal/:id", (req, res) => {
 
   db.run(`DELETE FROM jadwal WHERE id = ?`, [id], function (err) {
     if (err) return res.status(500).json({ error: err.message });
-    if (this.changes === 0) return res.status(404).json({ error: "Jadwal tidak ditemukan" });
+    if (this.changes === 0)
+      return res.status(404).json({ error: "Jadwal tidak ditemukan" });
     res.json({ success: true, deleted: this.changes });
   });
 });
@@ -113,6 +129,29 @@ app.post("/materi", (req, res) => {
       res.json({ id: this.lastID });
     }
   );
+});
+
+app.put("/materi/:id", (req, res) => {
+  const { id } = req.params;
+  const { judul, isi, tanggal } = req.body;
+
+  db.run(
+    `UPDATE materi SET judul = ?, isi = ?, tanggal = ? WHERE id = ?`,
+    [judul, isi, tanggal, id],
+    function (err) {
+      if (err) return res.status(500).json({ error: err.message });
+      res.json({ updated: this.changes });
+    }
+  );
+});
+
+app.delete("/materi/:id", (req, res) => {
+  const { id } = req.params;
+
+  db.run(`DELETE FROM materi WHERE id = ?`, [id], function (err) {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json({ deleted: this.changes });
+  });
 });
 
 // ------------------- START SERVER ------------------- //
