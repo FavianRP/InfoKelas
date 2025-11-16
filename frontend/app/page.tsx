@@ -1,27 +1,24 @@
 import { getAllJadwal, getAllTugas } from '@/lib/data';
+import { mataKuliahList } from '@/lib/mataKuliahData';
 import { Calendar, CheckSquare, BookOpen, Clock } from 'lucide-react';
 import Marquee from '@/app/components/Marquee';
 
 // Halaman ini adalah Server Component
 
 // Fungsi utilitas untuk menghitung statistik
-const calculateStats = (semuaTugas, semuaJadwal) => {
+const calculateStats = (semuaTugas, semuaJadwal, semuaMataKuliah) => {
   const totalTugas = semuaTugas.length;
   const tugasBelumSelesai = semuaTugas.filter(t => t.status !== 'Selesai').length;
-  const totalMataKuliah = new Set(semuaJadwal.map(j => j.mata_kuliah)).size;
-  
-  // Hitung kelas hari ini
+  const totalMataKuliah = semuaMataKuliah.length;
+
+  // Hitung kelas hari ini tetap dari jadwal
   const today = new Date();
   const hariIni = today.toLocaleDateString('id-ID', { weekday: 'long' }).split(',')[0];
   const kelasHariIni = semuaJadwal.filter(item => item.hari === hariIni).length;
 
-  return {
-    tugasBelumSelesai,
-    totalTugas,
-    totalMataKuliah,
-    kelasHariIni
-  };
+  return { tugasBelumSelesai, totalTugas, totalMataKuliah, kelasHariIni };
 };
+
 
 // Komponen Card Ringkasan yang didasarkan pada tampilan gambar
 const StatCard = ({ title, value, link, colorClass, icon: Icon }) => (
@@ -45,7 +42,7 @@ const StatCard = ({ title, value, link, colorClass, icon: Icon }) => (
 export default async function DashboardPage() {
   const semuaJadwal = await getAllJadwal();
   const semuaTugas = await getAllTugas();
-  const stats = calculateStats(semuaTugas, semuaJadwal);
+  const stats = calculateStats(semuaTugas, semuaJadwal, mataKuliahList);
   
   return (
     <div className="space-y-8">
@@ -83,10 +80,11 @@ export default async function DashboardPage() {
         <StatCard
           title="Total Mata Kuliah"
           value={stats.totalMataKuliah}
-          link="/jadwal"
+          link="/matkul"
           colorClass="bg-blue-500"
           icon={BookOpen}
-        />
+/>
+
 
       </div>
 
@@ -196,7 +194,8 @@ export default async function DashboardPage() {
 </section>
   <footer className="mt-10 py-4 text-center text-gray-500 text-sm">
   Created with <span className="text-red-500">❤️</span> by 
-  <span className="font-semibold text-gray-700"> Yintsu & dre4mer</span>
+  <span className="font-semibold text-gray-700"> <a href='https://github.com/Smeyintsu' target="_blank" rel="noopener noreferrer">Yintsu </a>
+   & <a href='https://github.com/FavianRP' target="_blank" rel="noopener noreferrer">dre4mer</a></span>
 </footer>
 
     </div>

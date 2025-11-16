@@ -13,10 +13,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$js
 ;
 function Marquee({ text }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "jsx-1c45ded5f36b65e4" + " " + "w-screen overflow-hidden relative h-6 mb-6",
+        className: "jsx-f1a32475b6abeb43" + " " + "w-screen overflow-hidden relative h-6 mb-6",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "jsx-1c45ded5f36b65e4" + " " + "absolute whitespace-nowrap text-sm text-gray-500 italic animate-marquee",
+                className: "jsx-f1a32475b6abeb43" + " " + "absolute whitespace-nowrap text-sm text-gray-500 italic animate-marquee",
                 children: text
             }, void 0, false, {
                 fileName: "[project]/app/components/Marquee.js",
@@ -24,8 +24,8 @@ function Marquee({ text }) {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                id: "1c45ded5f36b65e4",
-                children: "@keyframes marquee{0%{transform:translate(100vw)}to{transform:translate(-100%)}}.animate-marquee.jsx-1c45ded5f36b65e4{animation:15s linear infinite marquee}"
+                id: "f1a32475b6abeb43",
+                children: "@keyframes marquee{0%{transform:translate(100vw)}to{transform:translate(-100%)}}.animate-marquee.jsx-f1a32475b6abeb43{animation:15s linear infinite marquee}"
             }, void 0, false, void 0, this)
         ]
     }, void 0, true, {

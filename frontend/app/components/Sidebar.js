@@ -8,6 +8,7 @@ const navItems = [
   { name: 'Dashboard', href: '/', icon: LayoutDashboard },
   { name: 'Jadwal Kuliah', href: '/jadwal', icon: Calendar },
   { name: 'Daftar Tugas', href: '/tugas', icon: CheckSquare },
+  { name: 'List Matkul', href: '/matkul', icon: CheckSquare },
   // Tambahkan link lain di sini (misalnya: /upload, /kalender)
 ];
 
@@ -16,10 +17,13 @@ export default function Sidebar() {
 
   return (
     <div className="flex flex-col w-64 bg-indigo-900 text-white p-6 shadow-2xl">
-      {/* Logo/Nama Aplikasi */}
-      <div className="text-2xl font-extrabold mb-8 border-b border-indigo-700 pb-4">
+    {/* Logo/Nama Aplikasi */}
+    <div className="text-2xl font-extrabold mb-8 border-b border-indigo-700 pb-4">
+      <Link href="/" className="hover:text-indigo-300 transition">
         INFO KELAS
-      </div>
+      </Link>
+    </div>
+
 
       {/* Navigasi Link */}
       <nav className="flex-1">
@@ -54,6 +58,7 @@ export default function Sidebar() {
       {/* Info Pengguna */}
       <div className="mt-8 pt-4 border-t border-indigo-700">
         <p className="text-xs text-indigo-300">Pengguna: Mahasiswa</p>
+        <p className="text-xs text-indigo-300">Semester: 3</p>
       </div>
     </div>
   );

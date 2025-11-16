@@ -1,4 +1,1659 @@
-[00:00:05.244] Server  LOG      ✓ Ready in 2.7s
-[00:00:08.266] Server  LOG      ○ Compiling / ...
-[00:00:13.295] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:45.208] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:47.027] Server  LOG      ✓ Ready in 39.2s
+[00:00:59.927] Server  LOG      ○ Compiling / ...
+[00:01:17.725] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:30.779] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:54.573] Server  LOG      ✓ Compiled in 278ms
+[00:06:35.825] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:35.827] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:35.852] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MataKuliahList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:06:35.866] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MataKuliahList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:06:35.878] Server  LOG      ✓ Compiled in 148ms
+[00:06:35.998] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:35.998] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MataKuliahList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:06:37.272] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:37.272] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MataKuliahList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:06:37.549] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:37.549] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MataKuliahList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:06:39.003] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:39.003] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MataKuliahList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:06:39.158] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:39.348] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:39.348] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MataKuliahList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:06:39.348] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:39.348] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MataKuliahList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:06:53.454] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:53.455] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:53.636] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:53.636] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MatKulList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:06:56.291] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MatKulList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:06:56.400] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:56.545] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:56.545] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MatKulList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:06:56.545] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:56.545] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MatKulList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:07:56.369] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:07:56.370] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:07:56.651] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:08:05.213] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:05.215] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:05.558] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:08:14.688] Server  LOG      ✓ Compiled in 26ms
+[00:08:15.204] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:35.386] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:35.388] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:35.438] Server  LOG      ✓ Compiled in 43ms
+[00:08:35.639] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatKulList'
+> 1 | import MataKuliahList from '@/app/components/MatKulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+  3 |
+  4 | // Halaman ini adalah Server Component
+
+Import map: aliased to relative './app/components/MatKulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:08:35.639] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MatKulList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:08:37.970] Browser ERROR   ./app/matkul/page.js:2:1
+Export getAllMataKuliah doesn't exist in target module
+  1 | import MataKuliahList from '@/app/components/MatkulList';
+> 2 | import { getAllMataKuliah } from '@/lib/data'; // asumsi ada fungsi ini
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | // Halaman ini adalah Server Component
+  5 | export default async function MataKuliahPage() {
+
+The export getAllMataKuliah was not found in module [project]/lib/data.js [app-rsc] (ecmascript).
+Did you mean to import getAllJadwal?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:08:51.602] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__9275afcd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:51.604] Server  ERROR    ⨯ ReferenceError: getAllMataKuliah is not defined
+[00:08:51.737] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__9275afcd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:51.738] Server  ERROR    ⨯ ReferenceError: getAllMataKuliah is not defined
+[00:08:51.973] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:52.112] Browser ERROR   uncaughtError: ReferenceError: getAllMataKuliah is not defined
+[00:08:57.553] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__9275afcd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:57.554] Server  ERROR    ⨯ ReferenceError: semuaMataKuliah is not defined
+[00:08:57.955] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:58.098] Browser ERROR   uncaughtError: ReferenceError: semuaMataKuliah is not defined
+[00:09:32.829] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:09:32.831] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:09:33.326] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:09:34.982] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:09:35.121] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:09:35.287] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:09:35.287] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:09:43.289] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatkulhList'
+> 1 | import MataKuliahList from '@/app/components/MatkulhList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MatkulhList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:09:43.290] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatkulhList'
+> 1 | import MataKuliahList from '@/app/components/MatkulhList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MatkulhList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:09:43.638] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MatkulhList'
+> 1 | import MataKuliahList from '@/app/components/MatkulhList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   // Contoh data awal, bisa dikosongkan juga
+
+Import map: aliased to relative './app/components/MatkulhList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:09:45.673] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:04.410] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   const initialMataKuliah = [
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:13:04.453] Server  LOG      ✓ Compiled in 50ms
+[00:13:04.638] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   const initialMataKuliah = [
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:13:28.503] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:30.692] Server  ERROR    ⨯ ./app/components/MatkulList.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   const initialMataKuliah = [
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./app/components/MatkulList.js
+    ./app/matkul/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:13:30.734] Server  LOG      ✓ Compiled in 52ms
+[00:13:31.533] Browser ERROR   ./app/components/MatkulList.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   const initialMataKuliah = [
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+Import trace:
+  Server Component:
+    ./app/components/MatkulList.js
+    ./app/matkul/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+[00:13:38.740] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:58.198] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   const initialMataKuliah = [
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:13:58.233] Server  LOG      ✓ Compiled in 26ms
+[00:13:58.648] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/components/MataKuliahList'
+> 1 | import MataKuliahList from '@/app/components/MataKuliahList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function MataKuliahPage() {
+  4 |   const initialMataKuliah = [
+
+Import map: aliased to relative './app/components/MataKuliahList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:14:10.727] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:14.638] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
+
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true text-black text-black true text-black
+[00:16:25.362] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:26.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:28.266] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:23.138] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:23.944] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:24.080] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:44.226] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__ac02c106._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:17:44.228] Server  ERROR    ⨯ ReferenceError: totalMataKuliah is not defined
+[00:17:44.371] Browser ERROR   uncaughtError: ReferenceError: totalMataKuliah is not defined
+[00:17:49.234] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:46.646] Browser ERROR   ./app/page.tsx:49:43
+Parsing ecmascript source code failed
+  47 |   const semuaTugas = await getAllTugas();
+  48 |   const stats = calculateStats(semuaTugas, semuaJadwal);
+> 49 |   totalMataKuliah: semuaMataKuliah.length,;
+     |                                           ^
+  50 |   
+  51 |   return (
+  52 |     <div className="space-y-8">
+
+Expression expected
+[00:19:06.183] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__ac02c106._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:06.184] Server  ERROR    ⨯ ReferenceError: initialMataKuliah is not defined
+[00:19:06.650] Browser ERROR   uncaughtError: ReferenceError: initialMataKuliah is not defined
+[00:21:17.330] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:26.087] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:27.496] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:29.682] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:30.547] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:33.339] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:44.163] Browser ERROR   ./app/matkul/page.js:43:1
+Parsing ecmascript source code failed
+  41 |     </main>
+  42 |   );
+> 43 | }
+     | ^
+  44 |
+
+Expression expected
+[00:22:48.560] Server  LOG      ✓ Compiled in 20ms
+[00:23:06.997] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:08.616] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:18.643] Browser ERROR   ./app/matkul/page.js:1:1
+Export mataKuliahList doesn't exist in target module
+> 1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import MataKuliahList from '@/app/components/MatkulList';
+  3 |
+  4 | export default function MataKuliahPage() {
+
+The export mataKuliahList was not found in module [project]/lib/mataKuliahData.js [app-rsc] (ecmascript).
+Did you mean to import initialMataKuliah?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:24:34.640] Browser ERROR   ./app/matkul/page.js:1:1
+Export mataKuliahList doesn't exist in target module
+> 1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import MataKuliahList from '@/app/components/MatkulList';
+  3 |
+  4 | export default function MataKuliahPage() {
+
+The export mataKuliahList was not found in module [project]/lib/mataKuliahData.js [app-rsc] (ecmascript).
+Did you mean to import initialMataKuliah?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:24:43.681] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/lib/mataKuliahData'
+> 1 | import { mataKuliahList } from '@/app/lib/mataKuliahData';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import MataKuliahList from '@/app/components/MatkulList';
+  3 |
+  4 | export default function MataKuliahPage() {
+
+Import map: aliased to relative './app/lib/mataKuliahData' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:43.683] Server  ERROR    ⨯ ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/lib/mataKuliahData'
+> 1 | import { mataKuliahList } from '@/app/lib/mataKuliahData';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import MataKuliahList from '@/app/components/MatkulList';
+  3 |
+  4 | export default function MataKuliahPage() {
+
+Import map: aliased to relative './app/lib/mataKuliahData' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:43.957] Browser ERROR   ./app/matkul/page.js:1:1
+Module not found: Can't resolve '@/app/lib/mataKuliahData'
+> 1 | import { mataKuliahList } from '@/app/lib/mataKuliahData';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import MataKuliahList from '@/app/components/MatkulList';
+  3 |
+  4 | export default function MataKuliahPage() {
+
+Import map: aliased to relative './app/lib/mataKuliahData' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:25:01.647] Browser ERROR   ./app/matkul/page.js:1:1
+Export mataKuliahList doesn't exist in target module
+> 1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import MataKuliahList from '@/app/components/MatkulList';
+  3 |
+  4 | export default function MataKuliahPage() {
+
+The export mataKuliahList was not found in module [project]/lib/mataKuliahData.js [app-rsc] (ecmascript).
+Did you mean to import initialMataKuliah?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:25:27.022] Browser ERROR   ./app/matkul/page.js:1:1
+Export mataKuliahList doesn't exist in target module
+> 1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import MataKuliahList from '@/app/components/MatkulList';
+  3 |
+  4 | export default function MataKuliahPage() {
+
+The export mataKuliahList was not found in module [project]/lib/mataKuliahData.js [app-rsc] (ecmascript).
+Did you mean to import initialMataKuliah?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:25:43.094] Server  LOG      ✓ Compiled in 22ms
+[00:25:43.406] Browser ERROR   ./app/page.tsx:2:1
+Export initialMataKuliah doesn't exist in target module
+  1 | import { getAllJadwal, getAllTugas } from '@/lib/data';
+> 2 | import { initialMataKuliah } from '@/lib/mataKuliahData';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Calendar, CheckSquare, BookOpen, Clock } from 'lucide-react';
+  4 | import Marquee from '@/app/components/Marquee';
+  5 |
+
+The export initialMataKuliah was not found in module [project]/lib/mataKuliahData.js [app-rsc] (ecmascript).
+Did you mean to import mataKuliahList?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:26:34.968] Server  LOG      ✓ Compiled in 36ms
+[00:26:35.111] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__ac02c106._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:26:35.113] Server  ERROR    ⨯ ReferenceError: initialMataKuliah is not defined
+[00:26:35.147] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__ac02c106._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:26:35.148] Server  ERROR    ⨯ ReferenceError: initialMataKuliah is not defined
+[00:26:35.305] Browser ERROR   uncaughtError: ReferenceError: initialMataKuliah is not defined
+[00:26:43.702] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:45.780] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:47.375] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:54.141] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:03.547] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:25.228] Server  LOG      ✓ Compiled in 19ms
+[00:31:27.380] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:29.568] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:48.779] Server  ERROR    ⨯ ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:48.812] Server  LOG      ✓ Compiled in 29ms
+[00:32:49.603] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:04.059] Server  LOG      ✓ Compiled in 29ms
+[00:33:04.270] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:06.234] Server  ERROR    ⨯ ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:33:06.380] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:33:06.554] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:06.554] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:11.688] Server  LOG      ✓ Compiled in 23ms
+[00:33:12.179] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:16.629] Server  LOG      ✓ Compiled in 24ms
+[00:33:16.849] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:18.743] Server  ERROR    ⨯ ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:33:18.850] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:33:19.008] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:19.008] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:19.439] Server  ERROR    ⨯ ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:33:19.559] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:33:19.706] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:19.706] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:43.637] Browser ERROR   ./app/page.tsx:2:1
+Export initialMataKuliah doesn't exist in target module
+  1 | import { getAllJadwal, getAllTugas } from '@/lib/data';
+> 2 | import { initialMataKuliah } from '@/lib/mataKuliahData';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Calendar, CheckSquare, BookOpen, Clock } from 'lucide-react';
+  4 | import Marquee from '@/app/components/Marquee';
+  5 |
+
+The export initialMataKuliah was not found in module [project]/lib/mataKuliahData.js [app-rsc] (ecmascript).
+Did you mean to import mataKuliahList?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:33:43.638] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:34:21.177] Server  LOG      ✓ Compiled in 22ms
+[00:34:21.643] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:34:28.724] Server  LOG      ✓ Compiled in 24ms
+[00:34:29.002] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:34:48.650] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:05.478] Server  LOG      ✓ Compiled in 21ms
+[00:35:05.648] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:22.960] Server  ERROR    ⨯ ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:23.070] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:23.224] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:23.224] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:23.531] Server  ERROR    ⨯ ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:23.645] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:23.685] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:23.696] Server  ERROR    ⨯ ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:23.807] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:23.820] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:23.828] Server  ERROR    ⨯ ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:23.932] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:24.013] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:24.013] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:24.019] Server  ERROR    ⨯ ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:24.124] Browser ERROR   uncaughtError: Error: ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:35:24.277] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:24.277] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:35:38.907] Browser ERROR   ./app/matkul/page.js:2:1
+Module not found: Can't resolve '@/app/components/MatkulList'
+  1 | import { mataKuliahList } from '@/lib/mataKuliahData';
+> 2 | import MataKuliahList from '@/app/components/MatkulList';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function MataKuliahPage() {
+  5 |   return (
+
+Import map: aliased to relative './app/components/MatkulList' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:41.561] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:06.228] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:52.874] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:05.096] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:58.217] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:29.528] Server  LOG      ✓ Compiled in 23ms
+[00:49:01.445] Server  LOG      ✓ Compiled in 42ms
+[00:54:33.971] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__56747e25._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:54:33.974] Server  ERROR    ⨯ ReferenceError: Link is not defined
+[00:54:34.023] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__56747e25._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:54:34.023] Server  ERROR    ⨯ ReferenceError: Link is not defined
+[00:54:34.064] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__56747e25._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:54:34.064] Server  ERROR    ⨯ ReferenceError: Link is not defined
+[00:54:34.108] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__56747e25._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:54:34.108] Server  ERROR    ⨯ ReferenceError: Link is not defined
+[00:54:34.415] Browser ERROR   uncaughtError: ReferenceError: Link is not defined
+[00:54:54.325] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:55:29.036] Browser ERROR   ./app/layout.tsx:23:14
+Parsing ecmascript source code failed
+  21 |           {/* 2. Konten Utama (Dashboard, Jadwal, Tugas) */}
+  22 |           <div className="flex-1 flex flex-col overflow-hidden">
+> 23 |             <<header className="w-full bg-white shadow p-4 sticky top-0 z-10 flex items-center">
+     |              ^
+  24 |               <h1 className="text-xl font-bold text-gray-800">Info Kelas - 2IA15</h1>
+  25 |                {/* Tombol Login */}
+  26 |               <Link 
+
+Expression expected
+[00:55:35.942] Server  LOG      ✓ Compiled in 21ms
+[00:56:22.791] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__313394fa._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:56:22.792] Server  ERROR    ⨯ ReferenceError: LogIn is not defined
+[00:56:22.836] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__313394fa._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:56:22.837] Server  ERROR    ⨯ ReferenceError: LogIn is not defined
+[00:56:22.873] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__313394fa._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:56:22.874] Server  ERROR    ⨯ ReferenceError: LogIn is not defined
+[00:56:22.908] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\[root-of-the-server]__313394fa._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:56:22.909] Server  ERROR    ⨯ ReferenceError: LogIn is not defined
+[00:56:23.348] Browser ERROR   uncaughtError: ReferenceError: LogIn is not defined
+[00:56:28.757] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:52.539] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:52.840] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:54.627] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:07.695] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.701] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\node_modules_d0233d5e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.705] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.713] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.714] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.715] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.717] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.718] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.719] Server  ERROR    ⨯ Error: The default export is not a React Component in "/not-found"
+[00:58:07.722] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.722] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\node_modules_d0233d5e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.723] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.723] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.726] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.727] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.728] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.729] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.730] Server  ERROR    ⨯ Error: The default export is not a React Component in "/not-found"
+[00:58:07.819] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.819] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\node_modules_d0233d5e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.820] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.820] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.821] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.821] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.821] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.822] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.822] Server  ERROR    ⨯ Error: The default export is not a React Component in "/not-found"
+[00:58:07.824] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.825] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\node_modules_d0233d5e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.826] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.827] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.827] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.828] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.828] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.829] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.829] Server  ERROR    ⨯ Error: The default export is not a React Component in "/not-found"
+[00:58:07.853] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.854] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\node_modules_d0233d5e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.854] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.857] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.858] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.859] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.860] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.861] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.861] Server  ERROR    ⨯ Error: The default export is not a React Component in "/not-found"
+[00:58:07.863] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.864] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\node_modules_d0233d5e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.865] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.865] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.866] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.866] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.867] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.867] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.868] Server  ERROR    ⨯ Error: The default export is not a React Component in "/not-found"
+[00:58:07.891] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.892] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\node_modules_d0233d5e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.893] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.894] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.895] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.895] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.896] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.897] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.898] Server  ERROR    ⨯ Error: The default export is not a React Component in "/not-found"
+[00:58:07.901] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.902] Server  ERROR   E:\InfoKelas\frontend\.next\dev\server\chunks\ssr\node_modules_d0233d5e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.902] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.903] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.903] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.903] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.904] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.904] Server  ERROR   E:\InfoKelas\frontend\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:07.905] Server  ERROR    ⨯ Error: The default export is not a React Component in "/not-found"
+[00:58:08.183] Server  LOG      ✓ Compiled in 106ms
+[00:58:08.794] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:30.147] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:41.869] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:02.410] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:33.597] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:37.002] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:38.171] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:54.946] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:53.808] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:26.274] Server  LOG      ✓ Compiled in 132ms
+[01:01:48.047] Server  LOG      ✓ Compiled in 88ms
+[01:01:48.533] Browser ERROR   ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: E:\InfoKelas\frontend\app\globals.css:42:7: Unknown word */
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+[01:01:52.750] Browser ERROR   ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: E:\InfoKelas\frontend\app\globals.css:42:7: Unknown word */
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+[01:02:10.952] Browser ERROR   ./app/globals.css:876:2
+Parsing CSS source code failed
+  874 |   font-family: Arial, Helvetica, sans-serif;
+  875 | }
+> 876 |  {
+      |  ^
+  877 |   @keyframes glitch {
+  878 |     0% {
+  879 |       transform: translate(0, 0);
+
+Invalid empty selector
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+[01:02:24.769] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:30.632] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:18.428] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:24.870] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:25.830] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:06:01.701] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

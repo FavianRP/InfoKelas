@@ -268,7 +268,7 @@ function TugasList({ initialTugas }) {
         columnNumber: 5
     }, this);
 }
-_s(TugasList, "iD05E7kh+DuNJmWR1tqQvddnRxg=");
+_s(TugasList, "z3Iy0zrWt+YMWY7o2myP2dh8EGM=");
 _c = TugasList;
 var _c;
 __turbopack_context__.k.register(_c, "TugasList");
