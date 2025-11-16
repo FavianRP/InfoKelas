@@ -1,0 +1,40 @@
+{
+  "jadwal": [
+    {
+      "id": "JAD001",
+      "mata_kuliah": "Matematika Informatika 3",
+      "hari": "Selasa",
+      "waktu_mulai": "08:00",
+      "waktu_selesai": "10:00",
+      "ruangan": "E325",
+      "dosen": "Murni"
+    },
+    {
+      "id": "JAD002",
+      "mata_kuliah": "Informatika Kesehatan",
+      "hari": "Selasa",
+      "waktu_mulai": "10:30",
+      "waktu_selesai": "12:30",
+      "ruangan": "E325",
+      "dosen": "Vira Yolanda"
+    }
+  ],
+  "tugas": [
+    {
+      "id": "TGS001",
+      "mata_kuliah": "Pemrograman Web",
+      "nama_tugas": "Project API Sederhana",
+      "deskripsi": "Buat RESTful API untuk pengelolaan data.",
+      "tenggat_waktu": "2025-11-20",
+      "status": "Belum Selesai"
+    },
+    {
+      "id": "TGS002",
+      "mata_kuliah": "Struktur Data",
+      "nama_tugas": "Latihan Bubble Sort",
+      "deskripsi": "Implementasi algoritma Bubble Sort pada array.",
+      "tenggat_waktu": "2025-11-10",
+      "status": "Selesai"
+    }
+  ]
+}
