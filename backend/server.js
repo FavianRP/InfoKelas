@@ -112,32 +112,60 @@ app.delete("/jadwal/:id", (req, res) => {
 });
 
 // ------------------- MATERI ------------------- //
+
+// GET semua materi
 app.get("/materi", (req, res) => {
+  console.log("=== SERVER: GET ALL MATERI ===");
   db.all("SELECT * FROM materi", [], (err, rows) => {
-    if (err) return res.status(500).json({ error: err.message });
+    if (err) {
+      console.error("=== SERVER: GET ERROR ===", err);
+      return res.status(500).json({ error: err.message });
+    }
+    console.log("=== SERVER: RETURNING MATERI ===", rows);
     res.json(rows);
   });
 });
 
+// GET materi by ID
+app.get("/materi/:id", (req, res) => {
+  const { id } = req.params;
+  db.get("SELECT * FROM materi WHERE id = ?", [id], (err, row) => {
+    if (err) return res.status(500).json({ error: err.message });
+    if (!row) return res.status(404).json({ error: "Materi tidak ditemukan" });
+    res.json(row);
+  });
+});
+
+// POST materi
 app.post("/materi", (req, res) => {
-  const { judul, isi, tanggal } = req.body;
+  console.log("=== SERVER: RECEIVED BODY ===", req.body);
+  
+  const { judul, isi, file, tanggal } = req.body;
+  
+  console.log("=== SERVER: EXTRACTED DATA ===", { judul, isi, file, tanggal });
+
   db.run(
-    `INSERT INTO materi (judul, isi, tanggal) VALUES (?, ?, ?)`,
-    [judul, isi, tanggal],
+    `INSERT INTO materi (judul, isi, file, tanggal) VALUES (?, ?, ?, ?)`,
+    [judul, isi, file, tanggal],
     function (err) {
-      if (err) return res.status(500).json({ error: err.message });
+      if (err) {
+        console.error("=== SERVER: DB ERROR ===", err);
+        return res.status(500).json({ error: err.message });
+      }
+      console.log("=== SERVER: INSERT SUCCESS, ID ===", this.lastID);
       res.json({ id: this.lastID });
     }
   );
 });
 
+// PUT / update materi
 app.put("/materi/:id", (req, res) => {
   const { id } = req.params;
-  const { judul, isi, tanggal } = req.body;
+  const { judul, isi, file, tanggal } = req.body; // ✅ Ubah dari deskripsi & link
 
   db.run(
-    `UPDATE materi SET judul = ?, isi = ?, tanggal = ? WHERE id = ?`,
-    [judul, isi, tanggal, id],
+    `UPDATE materi SET judul = ?, isi = ?, file = ?, tanggal = ? WHERE id = ?`,
+    [judul, isi, file, tanggal, id], // ✅ Sesuaikan parameter
     function (err) {
       if (err) return res.status(500).json({ error: err.message });
       res.json({ updated: this.changes });
@@ -145,11 +173,13 @@ app.put("/materi/:id", (req, res) => {
   );
 });
 
+// DELETE materi
 app.delete("/materi/:id", (req, res) => {
   const { id } = req.params;
 
   db.run(`DELETE FROM materi WHERE id = ?`, [id], function (err) {
     if (err) return res.status(500).json({ error: err.message });
+    if (this.changes === 0) return res.status(404).json({ error: "Materi tidak ditemukan" });
     res.json({ deleted: this.changes });
   });
 });

@@ -5,18 +5,28 @@
 __turbopack_context__.s([
     "addJadwal",
     ()=>addJadwal,
+    "addMateri",
+    ()=>addMateri,
     "addTugas",
     ()=>addTugas,
     "deleteJadwal",
     ()=>deleteJadwal,
+    "deleteMateri",
+    ()=>deleteMateri,
     "deleteTugas",
     ()=>deleteTugas,
+    "fetchMateri",
+    ()=>fetchMateri,
+    "fetchMateriById",
+    ()=>fetchMateriById,
     "getAllJadwal",
     ()=>getAllJadwal,
     "getAllTugas",
     ()=>getAllTugas,
     "updateJadwal",
-    ()=>updateJadwal
+    ()=>updateJadwal,
+    "updateMateri",
+    ()=>updateMateri
 ]);
 const API_URL = "http://localhost:5000"; // backend SQLite
 async function getAllTugas() {
@@ -73,6 +83,47 @@ async function deleteJadwal(id) {
     });
     return res.json();
 }
+async function fetchMateri() {
+    try {
+        const res = await fetch(`${API_URL}/materi`);
+        if (!res.ok) throw new Error("Gagal fetch materi");
+        return res.json();
+    } catch (error) {
+        console.error("Error fetchMateri:", error);
+        return [];
+    }
+}
+async function fetchMateriById(id) {
+    const res = await fetch(`${API_URL}/materi/${id}`);
+    if (!res.ok) return null;
+    return res.json();
+}
+async function addMateri(data) {
+    const res = await fetch(`${API_URL}/materi`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+    return res.json();
+}
+async function updateMateri(id, data) {
+    const res = await fetch(`${API_URL}/materi/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+    return res.json();
+}
+async function deleteMateri(id) {
+    const res = await fetch(`${API_URL}/materi/${id}`, {
+        method: "DELETE"
+    });
+    return res.json();
+}
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -82,7 +133,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_context__.s([
     "default",
-    ()=>JadwalFilter
+    ()=>Jadwal
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
@@ -101,11 +152,12 @@ const DAYS = [
     "Jumat",
     "Sabtu"
 ];
-function JadwalFilter() {
+function Jadwal() {
     _s();
     const [jadwalData, setJadwalData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [selectedDay, setSelectedDay] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('Semua Hari');
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [isAdmin, setIsAdmin] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     // Form input tambah jadwal
     const [newJadwal, setNewJadwal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         mata_kuliah: '',
@@ -115,7 +167,13 @@ function JadwalFilter() {
         ruangan: '',
         dosen: ''
     });
-    // Fetch data dari backend saat component mount
+    // Cek role admin saat mount
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Jadwal.useEffect": ()=>{
+            const role = localStorage.getItem('role');
+            setIsAdmin(role === 'admin');
+        }
+    }["Jadwal.useEffect"], []);
     const fetchJadwal = async ()=>{
         setLoading(true);
         const data = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getAllJadwal"])();
@@ -123,20 +181,19 @@ function JadwalFilter() {
         setLoading(false);
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "JadwalFilter.useEffect": ()=>{
+        "Jadwal.useEffect": ()=>{
             fetchJadwal();
         }
-    }["JadwalFilter.useEffect"], []);
-    // Filter berdasarkan hari
+    }["Jadwal.useEffect"], []);
     const filteredJadwal = jadwalData.filter((item)=>selectedDay === 'Semua Hari' ? true : item.hari === selectedDay);
-    // Hapus jadwal
     const handleDelete = async (id)=>{
+        if (!isAdmin) return; // non-admin tidak bisa hapus
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["deleteJadwal"])(id);
-        fetchJadwal(); // refresh data
+        fetchJadwal();
     };
-    // Tambah jadwal
     const handleAdd = async (e)=>{
         e.preventDefault();
+        if (!isAdmin) return; // non-admin tidak bisa tambah
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addJadwal"])(newJadwal);
         setNewJadwal({
             mata_kuliah: '',
@@ -146,7 +203,7 @@ function JadwalFilter() {
             ruangan: '',
             dosen: ''
         });
-        fetchJadwal(); // refresh data
+        fetchJadwal();
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "p-6 bg-white rounded-xl shadow-lg",
@@ -156,26 +213,26 @@ function JadwalFilter() {
                 children: "📅 Jadwal Kuliah"
             }, void 0, false, {
                 fileName: "[project]/app/components/JadwalFilter.js",
-                lineNumber: 63,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex flex-wrap gap-2 mb-6",
                 children: DAYS.map((day)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setSelectedDay(day),
-                        className: `px-4 py-2 text-sm font-medium rounded-full transition duration-150 ease-in-out ${selectedDay === day ? 'bg-indigo-600 text-white shadow-md' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`,
+                        className: `px-4 py-2 text-sm font-medium rounded-full transition duration-150 ease-in-out cursor-pointer ${selectedDay === day ? 'bg-indigo-600 text-white shadow-md' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`,
                         children: day
                     }, day, false, {
                         fileName: "[project]/app/components/JadwalFilter.js",
-                        lineNumber: 68,
+                        lineNumber: 73,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/components/JadwalFilter.js",
-                lineNumber: 66,
+                lineNumber: 71,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+            isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                 className: "mb-6 space-y-2",
                 onSubmit: handleAdd,
                 children: [
@@ -194,8 +251,8 @@ function JadwalFilter() {
                                 required: true
                             }, void 0, false, {
                                 fileName: "[project]/app/components/JadwalFilter.js",
-                                lineNumber: 85,
-                                columnNumber: 11
+                                lineNumber: 91,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                 value: newJadwal.hari,
@@ -209,13 +266,13 @@ function JadwalFilter() {
                                         children: day
                                     }, day, false, {
                                         fileName: "[project]/app/components/JadwalFilter.js",
-                                        lineNumber: 98,
-                                        columnNumber: 39
+                                        lineNumber: 104,
+                                        columnNumber: 41
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/components/JadwalFilter.js",
-                                lineNumber: 93,
-                                columnNumber: 11
+                                lineNumber: 99,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 type: "time",
@@ -229,8 +286,8 @@ function JadwalFilter() {
                                 required: true
                             }, void 0, false, {
                                 fileName: "[project]/app/components/JadwalFilter.js",
-                                lineNumber: 100,
-                                columnNumber: 11
+                                lineNumber: 106,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 type: "time",
@@ -244,8 +301,8 @@ function JadwalFilter() {
                                 required: true
                             }, void 0, false, {
                                 fileName: "[project]/app/components/JadwalFilter.js",
-                                lineNumber: 108,
-                                columnNumber: 11
+                                lineNumber: 114,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 type: "text",
@@ -259,8 +316,8 @@ function JadwalFilter() {
                                 required: true
                             }, void 0, false, {
                                 fileName: "[project]/app/components/JadwalFilter.js",
-                                lineNumber: 116,
-                                columnNumber: 11
+                                lineNumber: 122,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 type: "text",
@@ -274,14 +331,14 @@ function JadwalFilter() {
                                 required: true
                             }, void 0, false, {
                                 fileName: "[project]/app/components/JadwalFilter.js",
-                                lineNumber: 124,
-                                columnNumber: 11
+                                lineNumber: 130,
+                                columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/JadwalFilter.js",
-                        lineNumber: 84,
-                        columnNumber: 9
+                        lineNumber: 90,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         type: "submit",
@@ -289,21 +346,21 @@ function JadwalFilter() {
                         children: "Tambah Jadwal"
                     }, void 0, false, {
                         fileName: "[project]/app/components/JadwalFilter.js",
-                        lineNumber: 133,
-                        columnNumber: 9
+                        lineNumber: 139,
+                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/JadwalFilter.js",
-                lineNumber: 83,
-                columnNumber: 7
+                lineNumber: 89,
+                columnNumber: 9
             }, this),
             loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 className: "text-gray-500",
                 children: "Loading..."
             }, void 0, false, {
                 fileName: "[project]/app/components/JadwalFilter.js",
-                lineNumber: 140,
+                lineNumber: 147,
                 columnNumber: 9
             }, this) : filteredJadwal.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "space-y-4",
@@ -317,7 +374,7 @@ function JadwalFilter() {
                                         children: item.mata_kuliah
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/JadwalFilter.js",
-                                        lineNumber: 146,
+                                        lineNumber: 153,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -327,7 +384,7 @@ function JadwalFilter() {
                                                 children: item.hari
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/JadwalFilter.js",
-                                                lineNumber: 148,
+                                                lineNumber: 155,
                                                 columnNumber: 19
                                             }, this),
                                             " | ",
@@ -341,33 +398,33 @@ function JadwalFilter() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/JadwalFilter.js",
-                                        lineNumber: 147,
+                                        lineNumber: 154,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/JadwalFilter.js",
-                                lineNumber: 145,
+                                lineNumber: 152,
                                 columnNumber: 15
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>handleDelete(item.id),
                                 className: "text-red-500 hover:text-red-700 font-bold cursor-pointer",
                                 children: "Hapus"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/JadwalFilter.js",
-                                lineNumber: 151,
-                                columnNumber: 15
+                                lineNumber: 161,
+                                columnNumber: 17
                             }, this)
                         ]
                     }, item.id, true, {
                         fileName: "[project]/app/components/JadwalFilter.js",
-                        lineNumber: 144,
+                        lineNumber: 151,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/components/JadwalFilter.js",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 9
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 className: "text-center py-10 text-gray-500",
@@ -377,27 +434,27 @@ function JadwalFilter() {
                         children: selectedDay
                     }, void 0, false, {
                         fileName: "[project]/app/components/JadwalFilter.js",
-                        lineNumber: 162,
+                        lineNumber: 173,
                         columnNumber: 38
                     }, this),
                     "."
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/JadwalFilter.js",
-                lineNumber: 161,
+                lineNumber: 172,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/JadwalFilter.js",
-        lineNumber: 62,
+        lineNumber: 67,
         columnNumber: 5
     }, this);
 }
-_s(JadwalFilter, "QjN3hahqe5dYBiTM9JgU1LJ5XQM=");
-_c = JadwalFilter;
+_s(Jadwal, "NTefj3bzD2+u2y4nC3eyKMpHHxs=");
+_c = Jadwal;
 var _c;
-__turbopack_context__.k.register(_c, "JadwalFilter");
+__turbopack_context__.k.register(_c, "Jadwal");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

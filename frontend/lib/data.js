@@ -62,3 +62,44 @@ export async function deleteJadwal(id) {
   });
   return res.json();
 }
+
+// ------------------- MATERI -------------------
+export async function fetchMateri() {
+  try {
+    const res = await fetch(`${API_URL}/materi`);
+    if (!res.ok) throw new Error("Gagal fetch materi");
+    return res.json();
+  } catch (error) {
+    console.error("Error fetchMateri:", error);
+    return [];
+  }
+}
+
+export async function fetchMateriById(id) {
+  const res = await fetch(`${API_URL}/materi/${id}`);
+  if (!res.ok) return null;
+  return res.json();
+}
+
+export async function addMateri(data) {
+  const res = await fetch(`${API_URL}/materi`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+export async function updateMateri(id, data) {
+  const res = await fetch(`${API_URL}/materi/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+export async function deleteMateri(id) {
+  const res = await fetch(`${API_URL}/materi/${id}`, { method: "DELETE" });
+  return res.json();
+}

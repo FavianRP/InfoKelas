@@ -118,7 +118,7 @@ const mataKuliahList = [
         id: 12,
         kode: 'PB045202',
         nama: 'Legal Aspek Produk Tek.Inf. & Komunikasi',
-        jenis: '2IA15',
+        kelas: '2IA15',
         jenis: 'W',
         sks: 2
     }

@@ -5,11 +5,12 @@ import { getAllJadwal, deleteJadwal, addJadwal } from '@/lib/data';
 
 const DAYS = ["Semua Hari", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
 
-export default function JadwalFilter() {
+export default function Jadwal() {
   const [jadwalData, setJadwalData] = useState([]);
   const [selectedDay, setSelectedDay] = useState('Semua Hari');
   const [loading, setLoading] = useState(true);
-  
+  const [isAdmin, setIsAdmin] = useState(false);
+
   // Form input tambah jadwal
   const [newJadwal, setNewJadwal] = useState({
     mata_kuliah: '',
@@ -20,7 +21,12 @@ export default function JadwalFilter() {
     dosen: ''
   });
 
-  // Fetch data dari backend saat component mount
+  // Cek role admin saat mount
+  useEffect(() => {
+    const role = localStorage.getItem('role');
+    setIsAdmin(role === 'admin');
+  }, []);
+
   const fetchJadwal = async () => {
     setLoading(true);
     const data = await getAllJadwal();
@@ -32,20 +38,19 @@ export default function JadwalFilter() {
     fetchJadwal();
   }, []);
 
-  // Filter berdasarkan hari
   const filteredJadwal = jadwalData.filter(item =>
     selectedDay === 'Semua Hari' ? true : item.hari === selectedDay
   );
 
-  // Hapus jadwal
   const handleDelete = async (id) => {
+    if (!isAdmin) return; // non-admin tidak bisa hapus
     await deleteJadwal(id);
-    fetchJadwal(); // refresh data
+    fetchJadwal();
   };
 
-  // Tambah jadwal
   const handleAdd = async (e) => {
     e.preventDefault();
+    if (!isAdmin) return; // non-admin tidak bisa tambah
     await addJadwal(newJadwal);
     setNewJadwal({
       mata_kuliah: '',
@@ -55,7 +60,7 @@ export default function JadwalFilter() {
       ruangan: '',
       dosen: ''
     });
-    fetchJadwal(); // refresh data
+    fetchJadwal();
   };
 
   return (
@@ -68,7 +73,7 @@ export default function JadwalFilter() {
           <button
             key={day}
             onClick={() => setSelectedDay(day)}
-            className={`px-4 py-2 text-sm font-medium rounded-full transition duration-150 ease-in-out ${
+            className={`px-4 py-2 text-sm font-medium rounded-full transition duration-150 ease-in-out cursor-pointer ${
               selectedDay === day
                 ? 'bg-indigo-600 text-white shadow-md'
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -79,61 +84,63 @@ export default function JadwalFilter() {
         ))}
       </div>
 
-      {/* Form Tambah Jadwal */}
-      <form className="mb-6 space-y-2" onSubmit={handleAdd}>
-        <div className="bg-gray-100 text-gray-900 grid grid-cols-1 sm:grid-cols-2 gap-2">
-          <input
-            type="text"
-            placeholder="Mata Kuliah"
-            value={newJadwal.mata_kuliah}
-            onChange={e => setNewJadwal({ ...newJadwal, mata_kuliah: e.target.value })}
-            className="border p-2 rounded"
-            required
-          />
-          <select
-            value={newJadwal.hari}
-            onChange={e => setNewJadwal({ ...newJadwal, hari: e.target.value })}
-            className="border p-2 rounded"
-          >
-            {DAYS.slice(1).map(day => <option key={day} value={day}>{day}</option>)}
-          </select>
-          <input
-            type="time"
-            placeholder="Waktu Mulai"
-            value={newJadwal.waktu_mulai}
-            onChange={e => setNewJadwal({ ...newJadwal, waktu_mulai: e.target.value })}
-            className="border p-2 rounded"
-            required
-          />
-          <input
-            type="time"
-            placeholder="Waktu Selesai"
-            value={newJadwal.waktu_selesai}
-            onChange={e => setNewJadwal({ ...newJadwal, waktu_selesai: e.target.value })}
-            className="border p-2 rounded"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Ruangan"
-            value={newJadwal.ruangan}
-            onChange={e => setNewJadwal({ ...newJadwal, ruangan: e.target.value })}
-            className="border p-2 rounded"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Dosen"
-            value={newJadwal.dosen}
-            onChange={e => setNewJadwal({ ...newJadwal, dosen: e.target.value })}
-            className="border p-2 rounded"
-            required
-          />
-        </div>
-        <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 cursor-pointer">
-          Tambah Jadwal
-        </button>
-      </form>
+      {/* Form Tambah Jadwal (Hanya Admin) */}
+      {isAdmin && (
+        <form className="mb-6 space-y-2" onSubmit={handleAdd}>
+          <div className="bg-gray-100 text-gray-900 grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <input
+              type="text"
+              placeholder="Mata Kuliah"
+              value={newJadwal.mata_kuliah}
+              onChange={e => setNewJadwal({ ...newJadwal, mata_kuliah: e.target.value })}
+              className="border p-2 rounded"
+              required
+            />
+            <select
+              value={newJadwal.hari}
+              onChange={e => setNewJadwal({ ...newJadwal, hari: e.target.value })}
+              className="border p-2 rounded"
+            >
+              {DAYS.slice(1).map(day => <option key={day} value={day}>{day}</option>)}
+            </select>
+            <input
+              type="time"
+              placeholder="Waktu Mulai"
+              value={newJadwal.waktu_mulai}
+              onChange={e => setNewJadwal({ ...newJadwal, waktu_mulai: e.target.value })}
+              className="border p-2 rounded"
+              required
+            />
+            <input
+              type="time"
+              placeholder="Waktu Selesai"
+              value={newJadwal.waktu_selesai}
+              onChange={e => setNewJadwal({ ...newJadwal, waktu_selesai: e.target.value })}
+              className="border p-2 rounded"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Ruangan"
+              value={newJadwal.ruangan}
+              onChange={e => setNewJadwal({ ...newJadwal, ruangan: e.target.value })}
+              className="border p-2 rounded"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Dosen"
+              value={newJadwal.dosen}
+              onChange={e => setNewJadwal({ ...newJadwal, dosen: e.target.value })}
+              className="border p-2 rounded"
+              required
+            />
+          </div>
+          <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 cursor-pointer">
+            Tambah Jadwal
+          </button>
+        </form>
+      )}
 
       {/* Daftar Jadwal */}
       {loading ? (
@@ -148,12 +155,16 @@ export default function JadwalFilter() {
                   <strong>{item.hari}</strong> | {item.waktu_mulai} - {item.waktu_selesai} WIB | Ruangan: {item.ruangan} | Dosen: {item.dosen}
                 </p>
               </div>
-              <button
-                onClick={() => handleDelete(item.id)}
-                className="text-red-500 hover:text-red-700 font-bold cursor-pointer"
-              >
-                Hapus
-              </button>
+
+              {/* Tombol Hapus (Hanya Admin) */}
+              {isAdmin && (
+                <button
+                  onClick={() => handleDelete(item.id)}
+                  className="text-red-500 hover:text-red-700 font-bold cursor-pointer"
+                >
+                  Hapus
+                </button>
+              )}
             </div>
           ))}
         </div>

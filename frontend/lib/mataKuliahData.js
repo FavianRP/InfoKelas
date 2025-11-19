@@ -11,5 +11,5 @@ export const mataKuliahList = [
   { id: 9, kode: 'IT045227', nama: 'Statistika 1', kelas: '2IA15', jenis: 'W', sks: 2 },
   { id: 10, kode: 'IT045229', nama: 'Struktur Data **', kelas: '2IA15', jenis: 'W', sks: 2 },
   { id: 11, kode: 'IT045243', nama: 'Pengantar Sains Data', kelas: '2IA15', jenis: 'W', sks: 2 },
-  { id: 12, kode: 'PB045202', nama: 'Legal Aspek Produk Tek.Inf. & Komunikasi', jenis: '2IA15', jenis: 'W', sks: 2 },
+  { id: 12, kode: 'PB045202', nama: 'Legal Aspek Produk Tek.Inf. & Komunikasi', kelas: '2IA15', jenis: 'W', sks: 2 },
 ];

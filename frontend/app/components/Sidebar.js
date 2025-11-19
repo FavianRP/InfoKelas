@@ -3,27 +3,38 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Calendar, CheckSquare, LayoutDashboard } from 'lucide-react'; 
+import Jam from './Jam'; // sesuaikan path
+import { useState, useEffect } from 'react';
 
 const navItems = [
   { name: 'Dashboard', href: '/', icon: LayoutDashboard },
   { name: 'Jadwal Kuliah', href: '/jadwal', icon: Calendar },
   { name: 'Daftar Tugas', href: '/tugas', icon: CheckSquare },
   { name: 'List Matkul', href: '/matkul', icon: CheckSquare },
+  { name: 'List Materi', href: '/materi', icon: CheckSquare },
   // Tambahkan link lain di sini (misalnya: /upload, /kalender)
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const [role, setRole] = useState('mahasiswa');
+
+  useEffect(() => {
+    const storedRole = localStorage.getItem('role') || 'mahasiswa';
+    setRole(storedRole);
+  }, []);
 
   return (
     <div className="flex flex-col w-64 bg-indigo-900 text-white p-6 shadow-2xl">
-    {/* Logo/Nama Aplikasi */}
-    <div className="text-2xl font-extrabold mb-8 border-b border-indigo-700 pb-4">
-      <Link href="/" className="hover:text-indigo-300 transition">
-        INFO KELAS
-      </Link>
-    </div>
+      {/* Logo/Nama Aplikasi */}
+      <div className="text-2xl font-extrabold border-b border-indigo-700 pb-2 text-center">
+        <Link href="/" className="hover:text-indigo-300 transition">
+          INFO KELAS
+        </Link>
+      </div>
 
+      {/* Jam dan Tanggal */}
+      <Jam /> 
 
       {/* Navigasi Link */}
       <nav className="flex-1">
@@ -31,14 +42,14 @@ export default function Sidebar() {
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = item.href === '/' 
-              ? pathname === '/' // Khusus untuk Dashboard
-              : pathname.startsWith(item.href); // Untuk semua path lainnya
+              ? pathname === '/' 
+              : pathname.startsWith(item.href);
 
             return (
               <li key={item.name}>
                 <Link 
                   href={item.href}
-                  className={`flex items-center p-3 rounded-lg transition-all duration-200 group ${
+                  className={`flex items-center p-3 rounded-lg transition-all duration-200 group mt-2 ${
                     isActive
                       ? 'bg-indigo-700 text-white font-bold shadow-md'
                       : 'text-indigo-200 hover:bg-indigo-800 hover:text-white'
@@ -46,7 +57,6 @@ export default function Sidebar() {
                 >
                   <Icon className="w-5 h-5 mr-3" />
                   <span className="text-sm">{item.name}</span>
-                  {/* Indikator aktif */}
                   {isActive && <span className="ml-auto w-2 h-2 bg-green-400 rounded-full"></span>}
                 </Link>
               </li>
@@ -57,8 +67,12 @@ export default function Sidebar() {
       
       {/* Info Pengguna */}
       <div className="mt-8 pt-4 border-t border-indigo-700">
-        <p className="text-xs text-indigo-300">Pengguna: Mahasiswa</p>
-        <p className="text-xs text-indigo-300">Semester: 3</p>
+        <p className="text-xs text-indigo-300">
+          Pengguna: {role === 'admin' ? 'Admin' : 'Mahasiswa'}
+        </p>
+        {role !== 'admin' && (
+          <p className="text-xs text-indigo-300">Semester: 3</p>
+        )}
       </div>
     </div>
   );

@@ -39,7 +39,6 @@ Dibangun menggunakan **Next.js**, dengan penyimpanan data menggunakan **MongoDB*
 1. Clone repository
 2. Install dependencies: 
 npm install
-# atau
 yarn install
 3. Jalankan development server:
 npm run dev
