@@ -41,69 +41,84 @@ __turbopack_context__.s([
     ()=>getAllJadwal,
     "getAllTugas",
     ()=>getAllTugas,
-    "updateJadwal",
-    ()=>updateJadwal,
     "updateMateri",
-    ()=>updateMateri
+    ()=>updateMateri,
+    "updateTugas",
+    ()=>updateTugas
 ]);
 const API_URL = "http://localhost:5000"; // backend SQLite
+function getTokenHeader() {
+    if ("TURBOPACK compile-time truthy", 1) return {}; // supaya SSR tidak error
+    //TURBOPACK unreachable
+    ;
+    const token = undefined;
+}
 async function getAllTugas() {
     const res = await fetch(`${API_URL}/tugas`, {
+        headers: getTokenHeader(),
         cache: "no-store"
     });
     return res.json();
 }
 async function addTugas(tugas) {
-    const res = await fetch("http://localhost:5000/tugas", {
+    const res = await fetch(`${API_URL}/tugas`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            ...getTokenHeader()
         },
         body: JSON.stringify(tugas)
     });
     return res.json();
 }
 async function deleteTugas(id) {
-    const res = await fetch(`http://localhost:5000/tugas/${id}`, {
-        method: "DELETE"
+    const res = await fetch(`${API_URL}/tugas/${id}`, {
+        method: "DELETE",
+        headers: getTokenHeader()
+    });
+    return res.json();
+}
+async function updateTugas(id, tugas) {
+    const res = await fetch(`${API_URL}/tugas/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            ...getTokenHeader()
+        },
+        body: JSON.stringify(tugas)
     });
     return res.json();
 }
 async function getAllJadwal() {
     const res = await fetch(`${API_URL}/jadwal`, {
-        cache: "no-store"
+        headers: getTokenHeader(),
+        cache: 'no-store'
     });
     return res.json();
 }
-async function addJadwal(jadwal) {
+async function addJadwal(data) {
     const res = await fetch(`${API_URL}/jadwal`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json',
+            ...getTokenHeader()
         },
-        body: JSON.stringify(jadwal)
-    });
-    return res.json();
-}
-async function updateJadwal(id, jadwal) {
-    const res = await fetch(`${API_URL}/jadwal/${id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(jadwal)
+        body: JSON.stringify(data)
     });
     return res.json();
 }
 async function deleteJadwal(id) {
     const res = await fetch(`${API_URL}/jadwal/${id}`, {
-        method: "DELETE"
+        method: 'DELETE',
+        headers: getTokenHeader()
     });
     return res.json();
 }
 async function fetchMateri() {
     try {
-        const res = await fetch(`${API_URL}/materi`);
+        const res = await fetch(`${API_URL}/materi`, {
+            headers: getTokenHeader()
+        });
         if (!res.ok) throw new Error("Gagal fetch materi");
         return res.json();
     } catch (error) {
@@ -112,15 +127,23 @@ async function fetchMateri() {
     }
 }
 async function fetchMateriById(id) {
-    const res = await fetch(`${API_URL}/materi/${id}`);
-    if (!res.ok) return null;
-    return res.json();
+    try {
+        const res = await fetch(`${API_URL}/materi/${id}`, {
+            headers: getTokenHeader()
+        });
+        if (!res.ok) return null;
+        return res.json();
+    } catch (error) {
+        console.error("Error fetchMateriById:", error);
+        return null;
+    }
 }
 async function addMateri(data) {
     const res = await fetch(`${API_URL}/materi`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            ...getTokenHeader()
         },
         body: JSON.stringify(data)
     });
@@ -130,7 +153,8 @@ async function updateMateri(id, data) {
     const res = await fetch(`${API_URL}/materi/${id}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            ...getTokenHeader()
         },
         body: JSON.stringify(data)
     });
@@ -138,7 +162,8 @@ async function updateMateri(id, data) {
 }
 async function deleteMateri(id) {
     const res = await fetch(`${API_URL}/materi/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
+        headers: getTokenHeader()
     });
     return res.json();
 }
@@ -989,12 +1014,12 @@ async function DashboardPage() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-4 bg-red-50 border-l-4 border-red-500 p-4 rounded-md shadow-sm",
+                        className: "mt-4 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-md shadow-sm",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex items-start",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                    className: "h-6 w-6 text-red-500 mt-1",
+                                    className: "h-6 w-6 text-yellow-500 mt-1",
                                     fill: "none",
                                     stroke: "currentColor",
                                     viewBox: "0 0 24 24",
@@ -1017,16 +1042,16 @@ async function DashboardPage() {
                                     className: "ml-3",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-lg font-semibold text-red-700",
-                                            children: "Peringatan Penting"
+                                            className: "text-lg font-semibold text-yellow-700",
+                                            children: "Peringatan"
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 290,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-red-800 text-sm mt-1",
-                                            children: "Terdapat gangguan pada sistem website."
+                                            className: "text-yellow-800 text-sm mt-1",
+                                            children: "Website akan melakukan maintenance setiap hari Minggu jam 00:00 - 06.00 WIB. beberapa fitur mungkin tidak tersedia. Jangan khawatir, layanan akan kembali normal secepatnya! Terima kasih atas pengertiannya."
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 291,
@@ -1048,67 +1073,6 @@ async function DashboardPage() {
                         fileName: "[project]/app/page.tsx",
                         lineNumber: 284,
                         columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-4 bg-gray-100 border-l-4 border-gray-400 p-4 rounded-md shadow-sm",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-start",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                    className: "h-6 w-6 text-gray-500 mt-1",
-                                    fill: "none",
-                                    stroke: "currentColor",
-                                    viewBox: "0 0 24 24",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                        strokeLinecap: "round",
-                                        strokeLinejoin: "round",
-                                        strokeWidth: "2",
-                                        d: "M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 110 20 10 10 0 010-20z"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/page.tsx",
-                                        lineNumber: 299,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/app/page.tsx",
-                                    lineNumber: 298,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "ml-3",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-lg font-semibold text-gray-700",
-                                            children: "Pengumuman"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/page.tsx",
-                                            lineNumber: 302,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-gray-600 text-sm mt-1",
-                                            children: "Halaman dashboard telah diperbarui."
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/page.tsx",
-                                            lineNumber: 303,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/page.tsx",
-                                    lineNumber: 301,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/page.tsx",
-                            lineNumber: 297,
-                            columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/app/page.tsx",
-                        lineNumber: 296,
-                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
@@ -1125,7 +1089,7 @@ async function DashboardPage() {
                         children: "❤️"
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 311,
+                        lineNumber: 299,
                         columnNumber: 22
                     }, this),
                     " by",
@@ -1138,7 +1102,7 @@ async function DashboardPage() {
                                 children: " Yintsu "
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 313,
+                                lineNumber: 301,
                                 columnNumber: 11
                             }, this),
                             "&",
@@ -1148,19 +1112,19 @@ async function DashboardPage() {
                                 children: " dre4mer"
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 315,
+                                lineNumber: 303,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 312,
+                        lineNumber: 300,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 310,
+                lineNumber: 298,
                 columnNumber: 7
             }, this)
         ]

@@ -157,7 +157,7 @@ const handleAdd = async (e) => {
                       e.stopPropagation();
                       handleDelete(m.id);
                     }}
-                    className="text-red-600 hover:underline cursor-pointer"
+                    className="text-red-500 hover:text-red-700 font-bold cursor-pointer"
                   >
                     Hapus
                   </button>

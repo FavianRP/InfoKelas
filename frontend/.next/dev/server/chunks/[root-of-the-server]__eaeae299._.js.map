@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///E:/InfoKelas/frontend/app/api/auth/login/route.js"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\n\r\nexport async function POST(req) {\r\n  const body = await req.json();\r\n\r\n  try {\r\n    // KIRIM DATA KE BACKEND\r\n    const res = await fetch(\"http://localhost:5000/api/auth/login\", {\r\n      method: \"POST\",\r\n      headers: { \"Content-Type\": \"application/json\" },\r\n      body: JSON.stringify(body),\r\n    });\r\n\r\n    const data = await res.json();\r\n\r\n    return NextResponse.json(data, { status: res.status });\r\n  } catch (err) {\r\n    console.error(\"Error connecting to backend:\", err);\r\n    return NextResponse.json({ message: \"Server error\" }, { status: 500 });\r\n  }\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe,KAAK,GAAG;IAC5B,MAAM,OAAO,MAAM,IAAI,IAAI;IAE3B,IAAI;QACF,wBAAwB;QACxB,MAAM,MAAM,MAAM,MAAM,wCAAwC;YAC9D,QAAQ;YACR,SAAS;gBAAE,gBAAgB;YAAmB;YAC9C,MAAM,KAAK,SAAS,CAAC;QACvB;QAEA,MAAM,OAAO,MAAM,IAAI,IAAI;QAE3B,OAAO,4JAAY,CAAC,IAAI,CAAC,MAAM;YAAE,QAAQ,IAAI,MAAM;QAAC;IACtD,EAAE,OAAO,KAAK;QACZ,QAAQ,KAAK,CAAC,gCAAgC;QAC9C,OAAO,4JAAY,CAAC,IAAI,CAAC;YAAE,SAAS;QAAe,GAAG;YAAE,QAAQ;QAAI;IACtE;AACF"}}]
+}

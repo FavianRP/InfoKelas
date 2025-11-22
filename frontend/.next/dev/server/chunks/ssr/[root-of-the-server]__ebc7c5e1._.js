@@ -41,69 +41,84 @@ __turbopack_context__.s([
     ()=>getAllJadwal,
     "getAllTugas",
     ()=>getAllTugas,
-    "updateJadwal",
-    ()=>updateJadwal,
     "updateMateri",
-    ()=>updateMateri
+    ()=>updateMateri,
+    "updateTugas",
+    ()=>updateTugas
 ]);
 const API_URL = "http://localhost:5000"; // backend SQLite
+function getTokenHeader() {
+    if ("TURBOPACK compile-time truthy", 1) return {}; // supaya SSR tidak error
+    //TURBOPACK unreachable
+    ;
+    const token = undefined;
+}
 async function getAllTugas() {
     const res = await fetch(`${API_URL}/tugas`, {
+        headers: getTokenHeader(),
         cache: "no-store"
     });
     return res.json();
 }
 async function addTugas(tugas) {
-    const res = await fetch("http://localhost:5000/tugas", {
+    const res = await fetch(`${API_URL}/tugas`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            ...getTokenHeader()
         },
         body: JSON.stringify(tugas)
     });
     return res.json();
 }
 async function deleteTugas(id) {
-    const res = await fetch(`http://localhost:5000/tugas/${id}`, {
-        method: "DELETE"
+    const res = await fetch(`${API_URL}/tugas/${id}`, {
+        method: "DELETE",
+        headers: getTokenHeader()
+    });
+    return res.json();
+}
+async function updateTugas(id, tugas) {
+    const res = await fetch(`${API_URL}/tugas/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            ...getTokenHeader()
+        },
+        body: JSON.stringify(tugas)
     });
     return res.json();
 }
 async function getAllJadwal() {
     const res = await fetch(`${API_URL}/jadwal`, {
-        cache: "no-store"
+        headers: getTokenHeader(),
+        cache: 'no-store'
     });
     return res.json();
 }
-async function addJadwal(jadwal) {
+async function addJadwal(data) {
     const res = await fetch(`${API_URL}/jadwal`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json',
+            ...getTokenHeader()
         },
-        body: JSON.stringify(jadwal)
-    });
-    return res.json();
-}
-async function updateJadwal(id, jadwal) {
-    const res = await fetch(`${API_URL}/jadwal/${id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(jadwal)
+        body: JSON.stringify(data)
     });
     return res.json();
 }
 async function deleteJadwal(id) {
     const res = await fetch(`${API_URL}/jadwal/${id}`, {
-        method: "DELETE"
+        method: 'DELETE',
+        headers: getTokenHeader()
     });
     return res.json();
 }
 async function fetchMateri() {
     try {
-        const res = await fetch(`${API_URL}/materi`);
+        const res = await fetch(`${API_URL}/materi`, {
+            headers: getTokenHeader()
+        });
         if (!res.ok) throw new Error("Gagal fetch materi");
         return res.json();
     } catch (error) {
@@ -112,15 +127,23 @@ async function fetchMateri() {
     }
 }
 async function fetchMateriById(id) {
-    const res = await fetch(`${API_URL}/materi/${id}`);
-    if (!res.ok) return null;
-    return res.json();
+    try {
+        const res = await fetch(`${API_URL}/materi/${id}`, {
+            headers: getTokenHeader()
+        });
+        if (!res.ok) return null;
+        return res.json();
+    } catch (error) {
+        console.error("Error fetchMateriById:", error);
+        return null;
+    }
 }
 async function addMateri(data) {
     const res = await fetch(`${API_URL}/materi`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            ...getTokenHeader()
         },
         body: JSON.stringify(data)
     });
@@ -130,7 +153,8 @@ async function updateMateri(id, data) {
     const res = await fetch(`${API_URL}/materi/${id}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            ...getTokenHeader()
         },
         body: JSON.stringify(data)
     });
@@ -138,7 +162,8 @@ async function updateMateri(id, data) {
 }
 async function deleteMateri(id) {
     const res = await fetch(`${API_URL}/materi/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
+        headers: getTokenHeader()
     });
     return res.json();
 }

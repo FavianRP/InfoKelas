@@ -190,6 +190,20 @@ export default async function DashboardPage() {
         <h2 className="text-2xl font-semibold text-gray-700">Detail Cepat</h2>
         <p className="text-gray-500 pb-2 border-b">Gunakan sidebar untuk navigasi lengkap.</p>
 
+        {/* Announcement Cards */}
+        <div className="mt-4 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-md shadow-sm">
+          <div className="flex items-start">
+            <svg className="h-6 w-6 text-yellow-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 110 20 10 10 0 010-20z" />
+            </svg>
+            <div className="ml-3">
+              <h3 className="text-lg font-semibold text-yellow-700">Pengumuman</h3>
+              <p className="text-yellow-800 text-sm mt-1">Website akan melakukan maintenance setiap hari Minggu jam 00:00 - 06.00 WIB. beberapa fitur mungkin tidak tersedia. 
+                Jangan khawatir, layanan akan kembali normal secepatnya! Terima kasih atas pengertiannya.</p>
+            </div>
+          </div>
+        </div>
+        
         {/* Kalender Akademik */}
         <section className="mt-10">
           <h2 className="text-2xl font-semibold text-gray-700 mb-3 flex items-center gap-2 text-center justify-center">
@@ -279,43 +293,36 @@ export default async function DashboardPage() {
             </table>
           </div>
         </section>
-
-        {/* Announcement Cards */}
-        <div className="mt-4 bg-red-50 border-l-4 border-red-500 p-4 rounded-md shadow-sm">
-          <div className="flex items-start">
-            <svg className="h-6 w-6 text-red-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 110 20 10 10 0 010-20z" />
-            </svg>
-            <div className="ml-3">
-              <h3 className="text-lg font-semibold text-red-700">Peringatan Penting</h3>
-              <p className="text-red-800 text-sm mt-1">Terdapat gangguan pada sistem website.</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-4 bg-gray-100 border-l-4 border-gray-400 p-4 rounded-md shadow-sm">
-          <div className="flex items-start">
-            <svg className="h-6 w-6 text-gray-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 110 20 10 10 0 010-20z" />
-            </svg>
-            <div className="ml-3">
-              <h3 className="text-lg font-semibold text-gray-700">Pengumuman</h3>
-              <p className="text-gray-600 text-sm mt-1">Halaman dashboard telah diperbarui.</p>
-            </div>
-          </div>
-        </div>
-
       </section>
 
       <footer className="mt-10 py-4 text-center text-gray-500 text-sm">
-        Created with <span className="text-red-500">❤️</span> by 
+        Created with <span className="text-red-500">❤️</span> by{" "}
         <span className="font-semibold text-gray-700">
-          <a href='https://github.com/Smeyintsu' target="_blank"> Yintsu </a>
-          & 
-          <a href='https://github.com/FavianRP' target="_blank"> dre4mer</a>
+          <a 
+            href="https://github.com/Smeyintsu" 
+            target="_blank" 
+            className="hover:text-red-500 transition-colors"
+          >
+            Yintsu
+          </a>
+          <span className="mx-2">|</span>
+          <a 
+            href="https://github.com/FavianRP" 
+            target="_blank" 
+            className="hover:text-red-500 transition-colors"
+          >
+            dre4mer
+          </a>
+          <span className="mx-2">|</span>
+          <a 
+            href="https://github.com/helscape" 
+            target="_blank" 
+            className="hover:text-red-500 transition-colors"
+          >
+            helscape
+          </a>
         </span>
       </footer>
-
     </div>
   );
 }

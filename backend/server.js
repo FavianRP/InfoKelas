@@ -1,15 +1,22 @@
 const express = require("express");
 const cors = require("cors");
-const db = require("./db"); // pastikan ini sudah konek ke SQLite
+const db = require("./db");
+const authRoutes = require('./routes/auth');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Routes
+app.use('/api', authRoutes);
+
 // ------------------- TUGAS ------------------- //
 app.get("/tugas", (req, res) => {
   db.all("SELECT * FROM tugas", [], (err, rows) => {
-    if (err) return res.status(500).json({ error: err.message });
+    if (err) {
+      console.error("Tugas GET Error:", err);
+      return res.status(500).json({ error: err.message });
+    }
     res.json(rows);
   });
 });
@@ -22,7 +29,10 @@ app.post("/tugas", (req, res) => {
      VALUES (?, ?, ?, ?)`,
     [judul, deskripsi, deadline, status || "Belum Selesai"],
     function (err) {
-      if (err) return res.status(500).json({ error: err.message });
+      if (err) {
+        console.error("Tugas INSERT Error:", err);
+        return res.status(500).json({ error: err.message });
+      }
       res.json({ id: this.lastID });
     }
   );
@@ -32,7 +42,10 @@ app.delete("/tugas/:id", (req, res) => {
   const { id } = req.params;
 
   db.run(`DELETE FROM tugas WHERE id = ?`, id, function (err) {
-    if (err) return res.status(500).json({ error: err.message });
+    if (err) {
+      console.error("Tugas DELETE Error:", err);
+      return res.status(500).json({ error: err.message });
+    }
 
     if (this.changes === 0) {
       return res.status(404).json({ error: "Tugas tidak ditemukan" });
@@ -50,7 +63,10 @@ app.put("/tugas/:id", (req, res) => {
     `UPDATE tugas SET judul = ?, deskripsi = ?, deadline = ? WHERE id = ?`,
     [judul, deskripsi, deadline, id],
     function (err) {
-      if (err) return res.status(500).json({ error: err.message });
+      if (err) {
+        console.error("Tugas UPDATE Error:", err);
+        return res.status(500).json({ error: err.message });
+      }
       res.json({ updated: this.changes });
     }
   );
@@ -59,15 +75,16 @@ app.put("/tugas/:id", (req, res) => {
 // ------------------- JADWAL ------------------- //
 app.get("/jadwal", (req, res) => {
   db.all("SELECT * FROM jadwal", [], (err, rows) => {
-    if (err) return res.status(500).json({ error: err.message });
+    if (err) {
+      console.error("Jadwal GET Error:", err);
+      return res.status(500).json({ error: err.message });
+    }
     res.json(rows);
   });
 });
 
 app.post("/jadwal", (req, res) => {
-  console.log("Request body:", req.body);
-  const { mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen } =
-    req.body;
+  const { mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen } = req.body;
 
   db.run(
     `INSERT INTO jadwal (mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen)
@@ -75,7 +92,7 @@ app.post("/jadwal", (req, res) => {
     [mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen],
     function (err) {
       if (err) {
-        console.error("DB Error:", err);
+        console.error("Jadwal INSERT Error:", err);
         return res.status(500).json({ error: err.message });
       }
       res.json({ id: this.lastID });
@@ -85,8 +102,7 @@ app.post("/jadwal", (req, res) => {
 
 app.put("/jadwal/:id", (req, res) => {
   const { id } = req.params;
-  const { mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen } =
-    req.body;
+  const { mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen } = req.body;
 
   db.run(
     `UPDATE jadwal 
@@ -94,7 +110,10 @@ app.put("/jadwal/:id", (req, res) => {
      WHERE id = ?`,
     [mata_kuliah, hari, waktu_mulai, waktu_selesai, ruangan, dosen, id],
     function (err) {
-      if (err) return res.status(500).json({ error: err.message });
+      if (err) {
+        console.error("Jadwal UPDATE Error:", err);
+        return res.status(500).json({ error: err.message });
+      }
       res.json({ updated: this.changes });
     }
   );
@@ -104,9 +123,14 @@ app.delete("/jadwal/:id", (req, res) => {
   const { id } = req.params;
 
   db.run(`DELETE FROM jadwal WHERE id = ?`, [id], function (err) {
-    if (err) return res.status(500).json({ error: err.message });
+    if (err) {
+      console.error("Jadwal DELETE Error:", err);
+      return res.status(500).json({ error: err.message });
+    }
+
     if (this.changes === 0)
       return res.status(404).json({ error: "Jadwal tidak ditemukan" });
+
     res.json({ success: true, deleted: this.changes });
   });
 });
@@ -115,71 +139,78 @@ app.delete("/jadwal/:id", (req, res) => {
 
 // GET semua materi
 app.get("/materi", (req, res) => {
-  console.log("=== SERVER: GET ALL MATERI ===");
   db.all("SELECT * FROM materi", [], (err, rows) => {
     if (err) {
-      console.error("=== SERVER: GET ERROR ===", err);
+      console.error("Materi GET Error:", err);
       return res.status(500).json({ error: err.message });
     }
-    console.log("=== SERVER: RETURNING MATERI ===", rows);
     res.json(rows);
   });
 });
 
-// GET materi by ID
+// GET by ID
 app.get("/materi/:id", (req, res) => {
   const { id } = req.params;
+
   db.get("SELECT * FROM materi WHERE id = ?", [id], (err, row) => {
-    if (err) return res.status(500).json({ error: err.message });
+    if (err) {
+      console.error("Materi GET BY ID Error:", err);
+      return res.status(500).json({ error: err.message });
+    }
     if (!row) return res.status(404).json({ error: "Materi tidak ditemukan" });
+
     res.json(row);
   });
 });
 
-// POST materi
+// POST
 app.post("/materi", (req, res) => {
-  console.log("=== SERVER: RECEIVED BODY ===", req.body);
-  
   const { judul, isi, file, tanggal } = req.body;
-  
-  console.log("=== SERVER: EXTRACTED DATA ===", { judul, isi, file, tanggal });
 
   db.run(
     `INSERT INTO materi (judul, isi, file, tanggal) VALUES (?, ?, ?, ?)`,
     [judul, isi, file, tanggal],
     function (err) {
       if (err) {
-        console.error("=== SERVER: DB ERROR ===", err);
+        console.error("Materi INSERT Error:", err);
         return res.status(500).json({ error: err.message });
       }
-      console.log("=== SERVER: INSERT SUCCESS, ID ===", this.lastID);
       res.json({ id: this.lastID });
     }
   );
 });
 
-// PUT / update materi
+// PUT
 app.put("/materi/:id", (req, res) => {
   const { id } = req.params;
-  const { judul, isi, file, tanggal } = req.body; // ✅ Ubah dari deskripsi & link
+  const { judul, isi, file, tanggal } = req.body;
 
   db.run(
     `UPDATE materi SET judul = ?, isi = ?, file = ?, tanggal = ? WHERE id = ?`,
-    [judul, isi, file, tanggal, id], // ✅ Sesuaikan parameter
+    [judul, isi, file, tanggal, id],
     function (err) {
-      if (err) return res.status(500).json({ error: err.message });
+      if (err) {
+        console.error("Materi UPDATE Error:", err);
+        return res.status(500).json({ error: err.message });
+      }
       res.json({ updated: this.changes });
     }
   );
 });
 
-// DELETE materi
+// DELETE
 app.delete("/materi/:id", (req, res) => {
   const { id } = req.params;
 
   db.run(`DELETE FROM materi WHERE id = ?`, [id], function (err) {
-    if (err) return res.status(500).json({ error: err.message });
-    if (this.changes === 0) return res.status(404).json({ error: "Materi tidak ditemukan" });
+    if (err) {
+      console.error("Materi DELETE Error:", err);
+      return res.status(500).json({ error: err.message });
+    }
+
+    if (this.changes === 0)
+      return res.status(404).json({ error: "Materi tidak ditemukan" });
+
     res.json({ deleted: this.changes });
   });
 });

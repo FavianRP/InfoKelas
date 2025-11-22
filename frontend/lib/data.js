@@ -1,72 +1,87 @@
 const API_URL = "http://localhost:5000"; // backend SQLite
 
-// Ambil Semua Tugas
+function getTokenHeader() {
+  if (typeof window === 'undefined') return {}; // supaya SSR tidak error
+  const token = localStorage.getItem('token');
+  return token ? { 'Authorization': `Bearer ${token}` } : {};
+}
+
+// ------------------- TUGAS -------------------
+
+// Ambil semua tugas
 export async function getAllTugas() {
-  const res = await fetch(`${API_URL}/tugas`, { cache: "no-store" });
+  const res = await fetch(`${API_URL}/tugas`, {
+    headers: getTokenHeader(),
+    cache: "no-store",
+  });
   return res.json();
 }
 
+// Tambah tugas baru
 export async function addTugas(tugas) {
-  const res = await fetch("http://localhost:5000/tugas", {
+  const res = await fetch(`${API_URL}/tugas`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...getTokenHeader() },
     body: JSON.stringify(tugas),
   });
-
   return res.json();
 }
 
+// Hapus tugas
 export async function deleteTugas(id) {
-  const res = await fetch(`http://localhost:5000/tugas/${id}`, {
-    method: "DELETE"
+  const res = await fetch(`${API_URL}/tugas/${id}`, {
+    method: "DELETE",
+    headers: getTokenHeader(),
   });
-
   return res.json();
 }
 
+// Update tugas (opsional)
+export async function updateTugas(id, tugas) {
+  const res = await fetch(`${API_URL}/tugas/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json", ...getTokenHeader() },
+    body: JSON.stringify(tugas),
+  });
+  return res.json();
+}
 
 // ---------------------------------------------
 //                   JADWAL
 // ---------------------------------------------
-
-// Ambil Semua Jadwal
 export async function getAllJadwal() {
-  const res = await fetch(`${API_URL}/jadwal`, { cache: "no-store" });
-  return res.json();
-}
-
-// Tambah Jadwal
-export async function addJadwal(jadwal) {
   const res = await fetch(`${API_URL}/jadwal`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(jadwal),
+    headers: getTokenHeader(),
+    cache: 'no-store',
   });
   return res.json();
 }
 
-// Update Jadwal
-export async function updateJadwal(id, jadwal) {
-  const res = await fetch(`${API_URL}/jadwal/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(jadwal),
+export async function addJadwal(data) {
+  const res = await fetch(`${API_URL}/jadwal`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...getTokenHeader() },
+    body: JSON.stringify(data),
   });
   return res.json();
 }
 
-// Hapus Jadwal
 export async function deleteJadwal(id) {
   const res = await fetch(`${API_URL}/jadwal/${id}`, {
-    method: "DELETE",
+    method: 'DELETE',
+    headers: getTokenHeader(),
   });
   return res.json();
 }
 
+
 // ------------------- MATERI -------------------
+// Ambil semua materi
 export async function fetchMateri() {
   try {
-    const res = await fetch(`${API_URL}/materi`);
+    const res = await fetch(`${API_URL}/materi`, {
+      headers: getTokenHeader()
+    });
     if (!res.ok) throw new Error("Gagal fetch materi");
     return res.json();
   } catch (error) {
@@ -75,31 +90,45 @@ export async function fetchMateri() {
   }
 }
 
+// Ambil materi berdasarkan ID
 export async function fetchMateriById(id) {
-  const res = await fetch(`${API_URL}/materi/${id}`);
-  if (!res.ok) return null;
-  return res.json();
+  try {
+    const res = await fetch(`${API_URL}/materi/${id}`, {
+      headers: getTokenHeader()
+    });
+    if (!res.ok) return null;
+    return res.json();
+  } catch (error) {
+    console.error("Error fetchMateriById:", error);
+    return null;
+  }
 }
 
+// Tambah materi baru
 export async function addMateri(data) {
   const res = await fetch(`${API_URL}/materi`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json", ...getTokenHeader() },
+    body: JSON.stringify(data)
   });
   return res.json();
 }
 
+// Update materi
 export async function updateMateri(id, data) {
   const res = await fetch(`${API_URL}/materi/${id}`, {
     method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json", ...getTokenHeader() },
+    body: JSON.stringify(data)
   });
   return res.json();
 }
 
+// Hapus materi
 export async function deleteMateri(id) {
-  const res = await fetch(`${API_URL}/materi/${id}`, { method: "DELETE" });
+  const res = await fetch(`${API_URL}/materi/${id}`, {
+    method: "DELETE",
+    headers: getTokenHeader()
+  });
   return res.json();
 }

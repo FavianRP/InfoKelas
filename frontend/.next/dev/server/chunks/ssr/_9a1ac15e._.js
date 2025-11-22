@@ -23,69 +23,84 @@ __turbopack_context__.s([
     ()=>getAllJadwal,
     "getAllTugas",
     ()=>getAllTugas,
-    "updateJadwal",
-    ()=>updateJadwal,
     "updateMateri",
-    ()=>updateMateri
+    ()=>updateMateri,
+    "updateTugas",
+    ()=>updateTugas
 ]);
 const API_URL = "http://localhost:5000"; // backend SQLite
+function getTokenHeader() {
+    if ("TURBOPACK compile-time truthy", 1) return {}; // supaya SSR tidak error
+    //TURBOPACK unreachable
+    ;
+    const token = undefined;
+}
 async function getAllTugas() {
     const res = await fetch(`${API_URL}/tugas`, {
+        headers: getTokenHeader(),
         cache: "no-store"
     });
     return res.json();
 }
 async function addTugas(tugas) {
-    const res = await fetch("http://localhost:5000/tugas", {
+    const res = await fetch(`${API_URL}/tugas`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            ...getTokenHeader()
         },
         body: JSON.stringify(tugas)
     });
     return res.json();
 }
 async function deleteTugas(id) {
-    const res = await fetch(`http://localhost:5000/tugas/${id}`, {
-        method: "DELETE"
+    const res = await fetch(`${API_URL}/tugas/${id}`, {
+        method: "DELETE",
+        headers: getTokenHeader()
+    });
+    return res.json();
+}
+async function updateTugas(id, tugas) {
+    const res = await fetch(`${API_URL}/tugas/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            ...getTokenHeader()
+        },
+        body: JSON.stringify(tugas)
     });
     return res.json();
 }
 async function getAllJadwal() {
     const res = await fetch(`${API_URL}/jadwal`, {
-        cache: "no-store"
+        headers: getTokenHeader(),
+        cache: 'no-store'
     });
     return res.json();
 }
-async function addJadwal(jadwal) {
+async function addJadwal(data) {
     const res = await fetch(`${API_URL}/jadwal`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json',
+            ...getTokenHeader()
         },
-        body: JSON.stringify(jadwal)
-    });
-    return res.json();
-}
-async function updateJadwal(id, jadwal) {
-    const res = await fetch(`${API_URL}/jadwal/${id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(jadwal)
+        body: JSON.stringify(data)
     });
     return res.json();
 }
 async function deleteJadwal(id) {
     const res = await fetch(`${API_URL}/jadwal/${id}`, {
-        method: "DELETE"
+        method: 'DELETE',
+        headers: getTokenHeader()
     });
     return res.json();
 }
 async function fetchMateri() {
     try {
-        const res = await fetch(`${API_URL}/materi`);
+        const res = await fetch(`${API_URL}/materi`, {
+            headers: getTokenHeader()
+        });
         if (!res.ok) throw new Error("Gagal fetch materi");
         return res.json();
     } catch (error) {
@@ -94,15 +109,23 @@ async function fetchMateri() {
     }
 }
 async function fetchMateriById(id) {
-    const res = await fetch(`${API_URL}/materi/${id}`);
-    if (!res.ok) return null;
-    return res.json();
+    try {
+        const res = await fetch(`${API_URL}/materi/${id}`, {
+            headers: getTokenHeader()
+        });
+        if (!res.ok) return null;
+        return res.json();
+    } catch (error) {
+        console.error("Error fetchMateriById:", error);
+        return null;
+    }
 }
 async function addMateri(data) {
     const res = await fetch(`${API_URL}/materi`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            ...getTokenHeader()
         },
         body: JSON.stringify(data)
     });
@@ -112,7 +135,8 @@ async function updateMateri(id, data) {
     const res = await fetch(`${API_URL}/materi/${id}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            ...getTokenHeader()
         },
         body: JSON.stringify(data)
     });
@@ -120,7 +144,8 @@ async function updateMateri(id, data) {
 }
 async function deleteMateri(id) {
     const res = await fetch(`${API_URL}/materi/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
+        headers: getTokenHeader()
     });
     return res.json();
 }
@@ -143,61 +168,68 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$js__$5b$app$2
 ;
 function TugasList({ initialTugas }) {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
-    const [tugas, setTugas] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(initialTugas);
+    const [tugas, setTugas] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(initialTugas || []);
     const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
         judul: "",
         deskripsi: "",
         deadline: ""
     });
     const [isAdmin, setIsAdmin] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Cek role saat mount
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const role = localStorage.getItem('role');
-        setIsAdmin(role === 'admin'); // true jika admin, false jika bukan
+        const role = localStorage.getItem("role");
+        setIsAdmin(role === "admin");
     }, []);
-    // Tambah Tugas
     const handleAdd = async (e)=>{
         e.preventDefault();
-        if (!isAdmin) return; // non-admin tidak bisa menambah
-        const newTugas = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addTugas"])({
-            judul: form.judul,
-            deskripsi: form.deskripsi,
-            deadline: form.deadline,
-            status: "Belum Selesai"
-        });
-        setTugas([
-            ...tugas,
-            {
-                id: newTugas.id,
+        if (!isAdmin) return;
+        setLoading(true);
+        try {
+            const newTugas = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addTugas"])({
                 ...form,
                 status: "Belum Selesai"
-            }
-        ]);
-        setForm({
-            judul: "",
-            deskripsi: "",
-            deadline: ""
-        });
+            });
+            setTugas([
+                ...tugas,
+                newTugas
+            ]);
+            setForm({
+                judul: "",
+                deskripsi: "",
+                deadline: ""
+            });
+        } catch (err) {
+            console.error(err);
+            alert("Gagal menambahkan tugas");
+        }
+        setLoading(false);
     };
-    // Hapus Tugas
     const handleDelete = async (id)=>{
-        if (!isAdmin) return; // non-admin tidak bisa hapus
-        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["deleteTugas"])(id);
-        setTugas(tugas.filter((t)=>t.id !== id));
+        if (!isAdmin) return;
+        if (!confirm("Apakah yakin ingin menghapus tugas ini?")) return;
+        setLoading(true);
+        try {
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$data$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["deleteTugas"])(id);
+            setTugas(tugas.filter((t)=>t.id !== id));
+        } catch (err) {
+            console.error(err);
+            alert("Gagal menghapus tugas");
+        }
+        setLoading(false);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "space-y-6",
         children: [
             isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                 onSubmit: handleAdd,
-                className: "p-4 bg-gray-100 text-gray-900 rounded-lg shadow space-y-3",
+                className: "p-4 bg-gray-100 rounded-lg shadow space-y-3",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "font-bold text-lg",
+                        className: "font-bold text-lg text-gray-800",
                         children: "Tambah Tugas"
                     }, void 0, false, {
                         fileName: "[project]/app/components/TugasList.js",
-                        lineNumber: 56,
+                        lineNumber: 54,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -208,11 +240,11 @@ function TugasList({ initialTugas }) {
                                 ...form,
                                 judul: e.target.value
                             }),
-                        className: "w-full border p-2 rounded",
+                        className: "w-full border p-2 rounded text-gray-800",
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/app/components/TugasList.js",
-                        lineNumber: 58,
+                        lineNumber: 55,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -222,11 +254,11 @@ function TugasList({ initialTugas }) {
                                 ...form,
                                 deskripsi: e.target.value
                             }),
-                        className: "w-full border p-2 rounded",
+                        className: "w-full border p-2 rounded text-gray-800",
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/app/components/TugasList.js",
-                        lineNumber: 67,
+                        lineNumber: 63,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -236,41 +268,42 @@ function TugasList({ initialTugas }) {
                                 ...form,
                                 deadline: e.target.value
                             }),
-                        className: "w-full border p-2 rounded",
+                        className: "w-full border p-2 rounded text-gray-800",
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/app/components/TugasList.js",
-                        lineNumber: 75,
+                        lineNumber: 70,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         type: "submit",
-                        className: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 cursor-pointer",
-                        children: "Tambah"
+                        disabled: loading,
+                        className: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 transition",
+                        children: loading ? "Menyimpan..." : "Tambah"
                     }, void 0, false, {
                         fileName: "[project]/app/components/TugasList.js",
-                        lineNumber: 83,
+                        lineNumber: 77,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/TugasList.js",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                 className: "space-y-3",
                 children: tugas.map((t)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                        className: "p-4 bg-gray-100 text-gray-900 rounded-lg shadow flex justify-between items-center",
+                        className: "p-4 bg-gray-100 rounded-lg shadow flex justify-between items-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "font-semibold",
+                                        className: "font-semibold text-gray-800",
                                         children: t.judul
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TugasList.js",
-                                        lineNumber: 100,
+                                        lineNumber: 91,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -278,7 +311,7 @@ function TugasList({ initialTugas }) {
                                         children: t.deskripsi
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/TugasList.js",
-                                        lineNumber: 101,
+                                        lineNumber: 92,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -289,39 +322,39 @@ function TugasList({ initialTugas }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/TugasList.js",
-                                        lineNumber: 102,
+                                        lineNumber: 93,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/TugasList.js",
-                                lineNumber: 99,
+                                lineNumber: 90,
                                 columnNumber: 13
                             }, this),
                             isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>handleDelete(t.id),
-                                className: "text-red-600 hover:underline cursor-pointer",
+                                className: "text-red-500 hover:text-red-700 font-bold cursor-pointer",
                                 children: "Hapus"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/TugasList.js",
-                                lineNumber: 107,
+                                lineNumber: 96,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, t.id, true, {
                         fileName: "[project]/app/components/TugasList.js",
-                        lineNumber: 95,
+                        lineNumber: 89,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/components/TugasList.js",
-                lineNumber: 93,
+                lineNumber: 87,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/TugasList.js",
-        lineNumber: 48,
+        lineNumber: 51,
         columnNumber: 5
     }, this);
 }

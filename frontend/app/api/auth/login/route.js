@@ -1,22 +1,21 @@
-import { NextResponse } from 'next/server';
-
-// Dummy user database
-const users = [
-  { username: 'admin', password: 'admin123', role: 'admin' },
-  { username: 'user', password: 'user123', role: 'user' },
-];
+import { NextResponse } from "next/server";
 
 export async function POST(req) {
-  const { username, password } = await req.json();
+  const body = await req.json();
 
-  const user = users.find(u => u.username === username && u.password === password);
+  try {
+    // KIRIM DATA KE BACKEND
+    const res = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
 
-  if (!user) {
-    return NextResponse.json({ message: 'Username atau password salah' }, { status: 401 });
+    const data = await res.json();
+
+    return NextResponse.json(data, { status: res.status });
+  } catch (err) {
+    console.error("Error connecting to backend:", err);
+    return NextResponse.json({ message: "Server error" }, { status: 500 });
   }
-
-  // Buat dummy token (bisa diganti JWT)
-  const token = btoa(`${username}:${password}`);
-
-  return NextResponse.json({ token, role: user.role });
 }
