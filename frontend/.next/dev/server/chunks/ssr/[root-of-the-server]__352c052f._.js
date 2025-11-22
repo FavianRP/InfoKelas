@@ -644,7 +644,7 @@ async function DashboardPage() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-yellow-800 text-sm mt-1",
-                                            children: "Website akan melakukan maintenance setiap hari Minggu jam 00:00 - 06.00 WIB. beberapa fitur mungkin tidak tersedia. Jangan khawatir, layanan akan kembali normal secepatnya! Terima kasih atas pengertiannya."
+                                            children: "Website akan melakukan maintenance setiap hari Minggu jam 00:00 - 06.00 WIB. beberapa fitur mungkin tidak tersedia. Jangan khawatir, website akan kembali normal secepatnya! Terima kasih atas pengertiannya."
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/page.tsx",
                                             lineNumber: 201,
@@ -1100,7 +1100,8 @@ async function DashboardPage() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: "https://github.com/Smeyintsu",
                                 target: "_blank",
-                                className: "hover:text-red-500 transition-colors",
+                                rel: "noopener noreferrer",
+                                className: "hover:text-blue-500 transition-colors",
                                 children: "Yintsu"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/page.tsx",
@@ -1112,17 +1113,18 @@ async function DashboardPage() {
                                 children: "|"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 308,
+                                lineNumber: 309,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: "https://github.com/FavianRP",
                                 target: "_blank",
-                                className: "hover:text-red-500 transition-colors",
+                                rel: "noopener noreferrer",
+                                className: "hover:text-blue-500 transition-colors",
                                 children: "dre4mer"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 309,
+                                lineNumber: 310,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1130,23 +1132,32 @@ async function DashboardPage() {
                                 children: "|"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 316,
+                                lineNumber: 318,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: "https://github.com/helscape",
                                 target: "_blank",
-                                className: "hover:text-red-500 transition-colors",
+                                rel: "noopener noreferrer",
+                                className: "hover:text-blue-500 transition-colors",
                                 children: "helscape"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 317,
+                                lineNumber: 319,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/page.tsx",
                         lineNumber: 300,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-2 text-gray-400 text-xs",
+                        children: "Kritik & Saran untuk website? Hubungi developer di atas."
+                    }, void 0, false, {
+                        fileName: "[project]/frontend/app/page.tsx",
+                        lineNumber: 328,
                         columnNumber: 9
                     }, this)
                 ]

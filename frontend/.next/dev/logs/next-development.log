@@ -370,3 +370,92 @@ https://react.dev/link/hydration-mismatch
 [00:22:53.128] Server  LOG      ✓ Compiled in 33ms
 [00:22:56.652] Server  LOG      ✓ Compiled in 39ms
 [00:23:08.807] Server  LOG      ✓ Compiled in 25ms
+[00:37:26.061] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="/frontend/...">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="id">
+                    <body className="inter_5972...">
+                      <div className="flex min-h...">
+                        <Sidebar>
+                          <button>
+                          <div className={"\n      ..."}>
+                            <div>
+                            <Clock>
+                              <div className="p-4 border...">
+                                <div>
+                                <div>
+                                <div className="mt-1 font-...">
++                                 18.26.25
+-                                 18.26.24
+                                  ...
+                            ...
+                        ...
+            ...
+
+[00:38:02.971] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} forbidden={undefined} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="/frontend/...">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="id">
+                    <body className="inter_5972...">
+                      <div className="flex min-h...">
+                        <Sidebar>
+                          <button>
+                          <div className={"\n      ..."}>
+                            <div>
+                            <Clock>
+                              <div className="p-4 border...">
+                                <div>
+                                <div>
+                                <div className="mt-1 font-...">
++                                 18.27.02
+-                                 18.27.01
+                                  ...
+                            ...
+                        ...
+            ...
+
+[00:45:42.936] Server  LOG      ✓ Compiled in 31ms

@@ -1064,6 +1064,10 @@
     color: var(--color-gray-200);
   }
 
+  .text-gray-400 {
+    color: var(--color-gray-400);
+  }
+
   .text-gray-500 {
     color: var(--color-gray-500);
   }
@@ -1293,6 +1297,12 @@
   @media (hover: hover) {
     .hover\:bg-indigo-800:hover {
       background-color: var(--color-indigo-800);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:text-blue-500:hover {
+      color: var(--color-blue-500);
     }
   }
 

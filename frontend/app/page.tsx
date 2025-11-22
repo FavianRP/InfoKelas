@@ -199,7 +199,7 @@ export default async function DashboardPage() {
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-yellow-700">Pengumuman</h3>
               <p className="text-yellow-800 text-sm mt-1">Website akan melakukan maintenance setiap hari Minggu jam 00:00 - 06.00 WIB. beberapa fitur mungkin tidak tersedia. 
-                Jangan khawatir, layanan akan kembali normal secepatnya! Terima kasih atas pengertiannya.</p>
+                Jangan khawatir, website akan kembali normal secepatnya! Terima kasih atas pengertiannya.</p>
             </div>
           </div>
         </div>
@@ -300,28 +300,34 @@ export default async function DashboardPage() {
         <span className="font-semibold text-gray-700">
           <a 
             href="https://github.com/Smeyintsu" 
-            target="_blank" 
-            className="hover:text-red-500 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="hover:text-blue-500 transition-colors"
           >
             Yintsu
           </a>
           <span className="mx-2">|</span>
           <a 
             href="https://github.com/FavianRP" 
-            target="_blank" 
-            className="hover:text-red-500 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="hover:text-blue-500 transition-colors"
           >
             dre4mer
           </a>
           <span className="mx-2">|</span>
           <a 
             href="https://github.com/helscape" 
-            target="_blank" 
-            className="hover:text-red-500 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="hover:text-blue-500 transition-colors"
           >
             helscape
           </a>
         </span>
+        <div className="mt-2 text-gray-400 text-xs">
+          Kritik & Saran untuk website? Hubungi developer di atas.
+        </div>
       </footer>
     </div>
   );

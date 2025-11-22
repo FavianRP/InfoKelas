@@ -25,6 +25,7 @@ function Clock() {
             })["Clock.useEffect"];
         }
     }["Clock.useEffect"], []);
+    // Format hari dan tanggal (Indonesia)
     const day = now.toLocaleDateString("id-ID", {
         weekday: "long"
     });
@@ -33,11 +34,12 @@ function Clock() {
         month: "long",
         year: "numeric"
     });
-    const time = now.toLocaleTimeString("id-ID", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-    });
+    // Format waktu HH:MM:SS
+    const pad = (n)=>n.toString().padStart(2, "0");
+    const hours = pad(now.getHours());
+    const minutes = pad(now.getMinutes());
+    const seconds = pad(now.getSeconds());
+    const time = `${hours}:${minutes}:${seconds} WIB`;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "p-4 border-b border-gray-300 text-center text-white-700",
         children: [
@@ -46,31 +48,28 @@ function Clock() {
                 children: day
             }, void 0, false, {
                 fileName: "[project]/frontend/app/components/Jam.js",
-                lineNumber: 18,
+                lineNumber: 25,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: date
             }, void 0, false, {
                 fileName: "[project]/frontend/app/components/Jam.js",
-                lineNumber: 19,
+                lineNumber: 26,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-1 font-mono text-sm",
-                children: [
-                    time,
-                    " WIB"
-                ]
-            }, void 0, true, {
+                children: time
+            }, void 0, false, {
                 fileName: "[project]/frontend/app/components/Jam.js",
-                lineNumber: 20,
+                lineNumber: 27,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/app/components/Jam.js",
-        lineNumber: 17,
+        lineNumber: 24,
         columnNumber: 5
     }, this);
 }

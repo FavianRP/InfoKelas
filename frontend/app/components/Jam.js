@@ -9,15 +9,22 @@ export default function Clock() {
     return () => clearInterval(interval);
   }, []);
 
+  // Format hari dan tanggal (Indonesia)
   const day = now.toLocaleDateString("id-ID", { weekday: "long" });
   const date = now.toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" });
-  const time = now.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+
+  // Format waktu HH:MM:SS
+  const pad = (n) => n.toString().padStart(2, "0");
+  const hours = pad(now.getHours());
+  const minutes = pad(now.getMinutes());
+  const seconds = pad(now.getSeconds());
+  const time = `${hours}:${minutes}:${seconds} WIB`;
 
   return (
     <div className="p-4 border-b border-gray-300 text-center text-white-700">
       <div className="font-semibold">{day}</div>
       <div>{date}</div>
-      <div className="mt-1 font-mono text-sm">{time} WIB</div>
+      <div className="mt-1 font-mono text-sm">{time}</div>
     </div>
   );
 }
