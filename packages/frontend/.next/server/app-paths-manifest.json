@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/jadwal/page": "app/jadwal/page.js",
+  "/login/page": "app/login/page.js",
+  "/materi/[id]/page": "app/materi/[id]/page.js",
+  "/materi/page": "app/materi/page.js",
+  "/matkul/page": "app/matkul/page.js",
+  "/page": "app/page.js",
+  "/tugas/page": "app/tugas/page.js"
+}

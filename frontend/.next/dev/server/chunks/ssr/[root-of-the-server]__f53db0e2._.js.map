@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///E:/InfoKelas/frontend/app/matkul/page.js"],"sourcesContent":["import MataKuliahList from '@/app/components/MataKuliahList';\r\n\r\nexport default function MataKuliahPage() {\r\n  // Contoh data awal, bisa dikosongkan juga\r\n  const initialMataKuliah = [\r\n    { id: 1, nama: 'Matematika', dosen: 'Dr. Budi', jadwal: 'Senin 08:00-10:00' },\r\n    { id: 2, nama: 'Fisika', dosen: 'Prof. Ani', jadwal: 'Selasa 10:00-12:00' },\r\n  ];\r\n\r\n  return (\r\n    <main className=\"min-h-screen p-8 bg-gray-100\">\r\n      <div className=\"max-w-4xl mx-auto\">\r\n        <h1 className=\"text-2xl font-bold mb-6\">Mata Kuliah Semester Ini</h1>\r\n\r\n        {/* Client Component */}\r\n        <MataKuliahList initialMataKuliah={initialMataKuliah} />\r\n      </div>\r\n    </main>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;;;;;;;;AAEe,SAAS;IACtB,0CAA0C;IAC1C,MAAM,oBAAoB;QACxB;YAAE,IAAI;YAAG,MAAM;YAAc,OAAO;YAAY,QAAQ;QAAoB;QAC5E;YAAE,IAAI;YAAG,MAAM;YAAU,OAAO;YAAa,QAAQ;QAAqB;KAC3E;IAED,qBACE,8OAAC;QAAK,WAAU;kBACd,cAAA,8OAAC;YAAI,WAAU;;8BACb,8OAAC;oBAAG,WAAU;8BAA0B;;;;;;8BAGxC,8OAAC;oBAAe,mBAAmB;;;;;;;;;;;;;;;;;AAI3C"}}]
-}
